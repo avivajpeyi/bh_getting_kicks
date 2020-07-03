@@ -1,10 +1,15 @@
-"""Python module to load samples and calculate their kicks"""
+"""Python module to load postetrior_samples and calculate their kicks"""
 
+import logging
 import os
+import sys
 
 import pandas as pd
 import tqdm
-from .black_hole import merge_bbh_pair, BlackHole
+
+from black_hole import BlackHole, merge_bbh_pair
+
+logging.getLogger().setLevel(logging.INFO)
 
 
 class Samples:
@@ -19,6 +24,7 @@ class Samples:
         assert len(posterior.columns.values) > 2
         posterior["id"] = posterior.index + 1
         posterior = posterior.set_index('id')
+        logging.info("Completed parsing in posterior samples")
         return posterior
 
     def calculate_remnant_kick_velocity(self):
@@ -32,12 +38,14 @@ class Samples:
             remnant_data.append(remnant_dict)
         remnant_df = pd.DataFrame(remnant_data)
         remnant_df = remnant_df.set_index("id")
+        assert len(remnant_df) == len(p)
         self.posterior = p.merge(remnant_df, on="id")
 
     def save_samples_with_kicks(self):
         self.calculate_remnant_kick_velocity()
         filename = self.filename.replace(".dat", "_with_kicks.dat")
         self.posterior.to_csv(filename)
+        logging.info(f"Saved samples with kicks in {filename}")
 
 
 def get_sample_kick(s):
@@ -47,12 +55,18 @@ def get_sample_kick(s):
     :return:
     """
     remnant = merge_bbh_pair(
-        bh_1=BlackHole(mass=s.mass_1, spin=[s.spin_1x, s.spin_1y, s.spin_1z]),
-        bh_2=BlackHole(mass=s.mass_2, spin=[s.spin_2x, s.spin_2y, s.spin_2z]),
+        bh_1=BlackHole(mass=s.mass_1_source, spin=[s.spin_1x, s.spin_1y, s.spin_1z]),
+        bh_2=BlackHole(mass=s.mass_2_source, spin=[s.spin_2x, s.spin_2y, s.spin_2z]),
     )
     return remnant.to_dict()
 
 
-if __name__ == "__main__":
-    samples = Samples(filename="samples.dat")
+def main():
+    samples_filename = sys.argv[1]
+    logging.info(f"Calculating kicks for {samples_filename}")
+    samples = Samples(filename=samples_filename)
     samples.save_samples_with_kicks()
+
+
+if __name__ == "__main__":
+    main()

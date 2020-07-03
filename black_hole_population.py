@@ -12,7 +12,7 @@ import tqdm
 from . import utils
 from .black_hole import BlackHole
 
-BH_FIT = surfinBH.LoadFits("NRSur7dq4Remnant")
+
 logging.getLogger().setLevel(logging.INFO)
 
 POPULATION_PRIOR = os.path.join(os.path.dirname(__file__), "init_population.prior")
@@ -45,7 +45,7 @@ class BlackHolePopulation:
     def __init_population(self):
         logging.info(f"Initialising {self.number_of_initial_bh} BH")
         BlackHole.bh_counter = 0
-        bbh_pop_prior = bilby.core.prior.PriorDict(filename=POPULATION_PRIOR)
+        bbh_pop_prior = BBHPriorDict(filename=POPULATION_PRIOR)(filename=POPULATION_PRIOR)
         num_bbh_pairs = self.number_of_initial_bh // 2
         bbh_population_data = bbh_pop_prior.sample(num_bbh_pairs)
         self.population = {}
@@ -79,85 +79,7 @@ class BlackHolePopulation:
             merging_bh_list.pop()
         return merging_bh_list
 
-    @staticmethod
-    def merge_bbh_pair(bh_1, bh_2):
-        """ Merges two BH and returns the final mass with kick and final spin
 
-        This uses the NRSur7dq4Remnant model to predict the final mass mf,
-        final spin vector chif and final kick velocity vector vf, for the remnants
-        of precessing binary black hole systems.  The fits are done using Gaussian
-        Process Regression (GPR) and also provide an error estimate along with the
-        fit value.
-
-        See arxiv:1905.09300
-
-        NOTE:
-        |  This model has been trained in the parameter space:
-        |      q <= 4, |chi_a| <= 0.8, |chi_b| <= 0.8
-        |
-        |  However, it extrapolates reasonably to:
-        |      q <= 6, |chi_a| <= 1, |chi_b| <= 1
-
-        q: float
-            Mass ratio (q = mA/mB >= 1)
-        chi_b: [float, float, float]
-            Dimensionless spin vector of the heavier black hole at reference epoch.
-        chi_b: [float, float, float]
-            Dimensionless spin vector of the lighter black hole at reference epoch.
-
-        Notes on chi_a and chi_b:
-        Follows the same convention as LAL, where the spin
-        components are defined as:
-        -> \chi_z = \chi \cdot \hat{L},
-        -> \chi_x = \chi \cdot \hat{n},
-        -> \chi_y = \chi \cdot \hat{L \cross n}.
-
-        where L is the orbital angular momentum vector at the epoch.
-        where n = body2 -> body1 is the separation vector at the epoch
-        (body1 is the heavier body)
-        These spin components are frame-independent as they are defined
-        using vector inner products. This is equivalent to specifying
-        the spins in the coorbital frame at the reference epoch.
-
-        To use aligned spin, set chi[0]=chi[1]=0
-
-        https://github.com/vijayvarma392/surfinBH/blob/master/examples/example_7dq4.ipynb
-
-        :param bh_1: BlackHole
-            1st black hole being merged
-        :param bh_2: BlackHole
-            2nd black hole being merged
-
-        :return: BlackHole
-            The merger remnant
-
-        """
-        if bh_1.mass / bh_2.mass >= 1:
-            q = bh_1.mass / bh_2.mass
-            chi_a = bh_1.spin
-            chi_b = bh_2.spin
-        else:
-            q = bh_2.mass / bh_1.mass
-            chi_a = bh_2.spin
-            chi_b = bh_1.spin
-
-        # Check if merging BH compatible with fit
-        m_chi_a = utils.mag(chi_a)
-        m_chi_b = utils.mag(chi_b)
-        if q > 4: logging.warning(f"q={q:.1f} > 4")
-        if m_chi_a > 0.8: logging.warning(f"|chi_a|={m_chi_a:.1f} > 0.8")
-        if m_chi_b > 0.8: logging.warning(f"|chi_b|={m_chi_b:.1f} > 0.8")
-
-        # Merging BH
-        total_mass = bh_1.mass + bh_2.mass
-        mf, chif, vf, mf_err, chif_err, vf_err = BH_FIT.all(q=q, chiA=chi_a, chiB=chi_b)
-        remnant = BlackHole(
-            mass=mf * total_mass, mass_unc=mf_err * total_mass,
-            spin=utils.randomise_spin_vector(chif), spin_unc=chif_err,
-            kick=vf, kick_unc=vf_err,
-            parents=[bh_1, bh_2]
-        )
-        return remnant
 
     @staticmethod
     def pair_up_bh(merging_bh_list: List[BlackHole]) -> List[
@@ -267,4 +189,7 @@ class BlackHolePopulation:
             avg_stats = avg_stats.add(expt_stats[i])
         avg_stats = avg_stats / len(expt_stats)
         return avg_stats
+
+
+
 
