@@ -6,6 +6,7 @@ import sys
 
 import pandas as pd
 import tqdm
+from bilby.gw import conversion
 
 from black_hole import BlackHole, merge_bbh_pair
 
@@ -22,6 +23,7 @@ class Samples:
         assert os.path.isfile(filename)
         posterior = pd.read_csv(filename, " ")
         assert len(posterior.columns.values) > 2, f"Error reading samples: {posterior}"
+        posterior = conversion.generate_component_spins(posterior)
         posterior["id"] = posterior.index + 1
         posterior = posterior.set_index('id')
         logging.info("Completed parsing in posterior samples")
