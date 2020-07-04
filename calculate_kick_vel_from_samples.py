@@ -20,8 +20,8 @@ class Samples:
     @staticmethod
     def read_dat_file(filename: str):
         assert os.path.isfile(filename)
-        posterior = pd.read_csv(filename, "\t")
-        assert len(posterior.columns.values) > 2
+        posterior = pd.read_csv(filename, " ")
+        assert len(posterior.columns.values) > 2 f"Error reading samples: {posterior}"
         posterior["id"] = posterior.index + 1
         posterior = posterior.set_index('id')
         logging.info("Completed parsing in posterior samples")
