@@ -88,7 +88,7 @@ def main():
     aligned_samples.add_remnant_data_to_samples()
     aligned_samples.save_samples()
 
-    precessing_samples = Samples(PRECESSING_SAMPLES)
+    precessing_samples = Samples(PRECESSING_POPULATION_PRIOR)
     precessing_samples.add_remnant_data_to_samples()
     precessing_samples.save_samples()
 

@@ -16,14 +16,3 @@ CORNER_KWARGS = dict(
     max_n_ticks=3,
 )
 
-
-plt.hist(df.precessing, density=True, alpha=0.5,  bins=50, label='Precessing Spin')
-plt.hist(df.aligned, density=True, alpha=0.5, bins=5, label='Aligned Spin')
-plt.xlabel("Kick Mag")
-plt.ylabel("Density")
-plt.legend()
-plt.savefig("kicks_one_plot.png")
-plt.close()
-
-
-from mpl_toolkits import mplot3d
