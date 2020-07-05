@@ -28,7 +28,7 @@ from scipy.stats import norm
 rcParams["font.size"] = 16
 rcParams["font.family"] = "sans-serif"
 rcParams["font.sans-serif"] = ["Computer Modern Sans"]
-rcParams["text.usetex"] = False
+rcParams["text.usetex"] = True
 rcParams["text.latex.preamble"] = r"\usepackage{cmbright}"
 
 from corner_kwargs import CORNER_KWARGS
@@ -41,13 +41,13 @@ PARAMS = dict(
     mass_1_source=r'$m_1$(source)',
     mass_2_source=r'$m_2$(source)',
     remnant_mass=r'$m_rem$(source)',
-    chi_p=r'$\\chi_p$',
-    chi_eff=r'$\\chi_{eff}$',
+    chi_p=r'$\chi_p$',
+    chi_eff=r'$\chi_{eff}$',
     mass_ratio=r'q',
     tilt_1=r'tilt_1',
     tilt_2=r'tilt_2',
     luminosity_distance=r'$d_l$',
-    remnant_kick_mag=r'$|\\vec{v}_k|$ km/s'
+    remnant_kick_mag=r'$|\vec{v}_k|$ km/s'
 )
 
 
