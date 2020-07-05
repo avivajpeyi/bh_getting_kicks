@@ -39,7 +39,7 @@ KICK_WEIGHT = "kick_weight"
 PARAMS = dict(
     mass_1_source=r'$m_1$(source)',
     mass_2_source=r'$m_2$(source)',
-    remnant_mass=r'$m_rem$(source)',
+    remnant_mass=r'$m_{rem}$(source)',
     chi_p=r'$\chi_p$',
     chi_eff=r'$\chi_{eff}$',
     mass_ratio=r'$q$',
@@ -109,7 +109,7 @@ class Samples:
         else:
             corner.corner(s, **corner_kwargs)
         plt.suptitle(f"{title}", fontsize=30, fontdict=dict(color='darkblue'))
-        plt.savefig(f"{f}.png")
+        plt.savefig(f)
         plt.close()
 
 
@@ -146,7 +146,9 @@ def main():
 
     fname = args.samples_csv.replace(".dat",
                                      f"kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
-    samples.plot_corner(f=fname, weights=True, title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format("N",int(args.kick_mean), int(args.kick_sigma)))
+    samples.plot_corner(f=fname, weights=True,
+                        title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format(
+                            int(args.kick_mean), int(args.kick_sigma)))
 
 
 if __name__ == "__main__":
