@@ -145,7 +145,7 @@ def main():
 
     fname = args.samples_csv.replace(".csv",
                                      f"kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
-    samples.plot_corner(f=fname, weights=True, title=r"Reweighted with $\mathcal{N}(\mu={{}},\sigma={{}})$".format(int(args.kick_mean), int(args.kick_sigma)))
+    samples.plot_corner(f=fname, weights=True, title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format("N",int(args.kick_mean), int(args.kick_sigma)))
 
 
 if __name__ == "__main__":
