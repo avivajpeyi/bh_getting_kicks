@@ -16,17 +16,22 @@ logging.getLogger().setLevel(logging.INFO)
 class Samples:
     def __init__(self, filename: str):
         self.filename = filename
-        self.posterior = self.read_dat_file(filename)
+        self.posterior = self.read_file(filename)
 
     @staticmethod
-    def read_dat_file(filename: str):
+    def read_file(filename: str):
         assert os.path.isfile(filename)
-        posterior = pd.read_csv(filename, " ")
-        assert len(posterior.columns.values) > 2, f"Error reading samples: {posterior}"
+        _, file_extension = os.path.splitext(filename)
+        if file_extension == ".dat":
+            posterior = pd.read_csv(filename, " ")
+        else:
+            posterior = pd.read_csv(filename)
+        assert len(posterior.columns.values) > 2, f"Error reading posterior: {posterior}"
+        posterior = conversion.generate_all_bbh_parameters(posterior)
         posterior = conversion.generate_component_spins(posterior)
         posterior["id"] = posterior.index + 1
         posterior = posterior.set_index('id')
-        logging.info("Completed parsing in posterior samples")
+        logging.info("Completed parsing in posterior posterior")
         return posterior
 
     def calculate_remnant_kick_velocity(self):
@@ -47,7 +52,7 @@ class Samples:
         self.calculate_remnant_kick_velocity()
         filename = self.filename.replace(".dat", "_with_kicks.dat")
         self.posterior.to_csv(filename)
-        logging.info(f"Saved samples with kicks in {filename}")
+        logging.info(f"Saved posterior with kicks in {filename}")
 
 
 def get_sample_kick(s):

@@ -3,11 +3,11 @@
 
 We know kick v ~ 200km/s +/- 50km/s
 
-We can re-weight our samples based on this
+We can re-weight our posterior based on this
 
 Calculate the prob(kick) based on the above distribution
 
-re-weight our samples by np.random.choice(samples, fraction=0.1, weights=prob(kick_for_sample))
+re-weight our posterior by np.random.choice(posterior, fraction=0.1, weights=prob(kick_for_sample))
 
 Example usage:
 
@@ -24,100 +24,116 @@ import pandas as pd
 from bilby.gw import conversion
 from scipy.stats import norm
 
+from corner_kwargs import CORNER_KWARGS
+
 logging.getLogger().setLevel(logging.INFO)
 
 KICK_WEIGHT = "kick_weight"
 
-CORNER_KWARGS = dict(smooth=0.9, label_kwargs=dict(fontsize=16),
-                     title_kwargs=dict(fontsize=16), color='#0072C1',
-                     truth_color='tab:orange', quantiles=[0.16, 0.84],
-                     levels=(1 - np.exp(-0.5), 1 - np.exp(-2), 1 - np.exp(-9 / 2.)),
-                     plot_density=False, plot_datapoints=False, fill_contours=True,
-                     show_titles=True,
-                     max_n_ticks=3, )
+PARAMS = dict(
+    mass_1_source=r'$m_1$(source)',
+    mass_2_source=r'$m_2$(source)',
+    remnant_mass=r'$m_rem$(source)',
+    chi_p=r'$\\chi_p$',
+    chi_eff=r'$\\chi_{eff}$',
+    mass_ratio=r'q',
+    tilt_1=r'tilt_1',
+    tilt_2=r'tilt_2',
+    luminosity_distance=r'$d_l$',
+    redshift=r'$z$',
+    remnant_kick_mag=r'$|\\vec{v}_k|$ km/s'
+)
 
 
 def parse_cli_args(args=sys.argv[1:]):
-    parser = argparse.ArgumentParser(description='Reweight samples based on true kick')
-    parser.add_argument('--result', type='str', required=True,
-                        help='A CSV file of the samples')
-    parser.add_argument('--outfile', type='str', required=True,
-                        help='Reweighted output samples CSV filename')
-    parser.add_argument('--kick-mean', type='float', required=True,
+    parser = argparse.ArgumentParser(
+        description='Reweight posterior based on true kick')
+    parser.add_argument('--samples-csv', type=str, required=True,
+                        help='A CSV file of the posterior')
+    parser.add_argument('--kick-mean', type=float, required=False,
                         help='The mean value of the true kick distribution (im km/s)')
-    parser.add_argument('--kick-stddev', type='float', required=True,
+    parser.add_argument('--kick-stddev', type=float, required=False,
                         help='The mean value of the true kick distribution (im km/s)')
+    parser.add_argument('--true-file', type=str, required=False,
+                        help='CSV File with the True Vals of the parameters')
+    parser.add_argument('--true-idx', type=int, required=False,
+                        help='Row idx of the true val')
 
     parsed_args = parser.parse_args(args)
 
-    if not os.path.isfile(parsed_args.result):
-        raise FileNotFoundError(
-            f"Result {parsed_args.result} is not a csv file that can be accessed"
-        )
+    assert (os.path.isfile(parsed_args.samples_csv),
+            f"Result {parsed_args.samples_csv} is not a csv file that can be accessed")
 
-    if os.path.isfile(parsed_args.outfile):
-        logging.warning(f"{parsed_args.outfile} already exists and will be overwritten."
-                        f"Terminate job if you do not want to overwrite.")
-
+    if parsed_args.true_file is not None:
+        assert parsed_args.true_idx is not None, "A idx for the true values must be passed"
+        assert (os.path.isfile(parsed_args.true_file),
+                f"True file {parsed_args.true_file} cant be accessed")
     return parsed_args
 
 
-def load_samples(result_file):
-    """Loads samples from result file"""
-    samples = pd.read_csv(result_file)
-    samples = conversion.generate_component_spins(samples)
-    try:
-        assert len(samples.remnant_kick_mag) > 0
-    except Exception as e:
-        raise ValueError(
-            f"Error: {e}. "
-            f"There are no `remnant_kick_mag` samples. "
-            f"The samples present are for {list(samples.columns.values)}")
-    logging.info(f"Loaded {result_file}")
-    return samples
+class Samples:
+    def __init__(self, samples_csv, kick_mean, kick_sigma, truths):
+        self.truths = truths
+        self.posterior = self.load_posterior(samples_csv)
+        self.add_new_kick_distribution_weights(kick_mean, kick_sigma)
+
+    @staticmethod
+    def load_posterior(result_file):
+        """Loads posterior from result file"""
+        samples = pd.read_csv(result_file)
+        samples = conversion.generate_component_spins(samples)
+        try:
+            assert len(samples.remnant_kick_mag) > 0
+        except Exception as e:
+            raise ValueError(
+                f"Error: {e}. "
+                f"There are no `remnant_kick_mag` posterior. "
+                f"The posterior present are for {list(samples.columns.values)}")
+        logging.info(f"Loaded {result_file}")
+        return samples
+
+    def add_new_kick_distribution_weights(self, kick_mean, kick_sigma):
+        logging.info(f"Adding kick weights based on N({kick_mean}, {kick_sigma})")
+        kick_prior = norm(loc=kick_mean, scale=kick_sigma)
+        self.posterior[KICK_WEIGHT] = np.abs(
+            np.exp(kick_prior.logpdf(self.posterior.remnant_kick_mag)))
+
+    def plot_corner(self, f, weights=False):
+        logging.info(f"Plotting {f}")
+        s = self.posterior[list(PARAMS.keys())]
+        corner_kwargs = CORNER_KWARGS.copy()
+        corner_kwargs.update(dict(labels=list(PARAMS.values())))
+        if len(self.truths) > 0:
+            corner_kwargs.update(dict(truths=[truths[k] for k in PARAMS.keys()]))
+        if weights:
+            corner.corner(s, weights=self.posterior.kick_weight, **corner_kwargs)
+        else:
+            corner.corner(s, **corner_kwargs)
+        plt.suptitle(f"{f}", fontsize=30, fontdict=dict(color='darkblue'))
+        plt.savefig(f"{f}.png")
+        plt.close()
 
 
-def add_new_kick_distribution_weights(samples, kick_mean, kick_sigma):
-    logging.info(f"Adding kick weights based on N({kick_mean}, {kick_sigma})")
-    kick_prior = norm(loc=kick_mean, scale=kick_sigma)
-    samples[KICK_WEIGHT] = np.abs(np.exp(kick_prior.logpdf(samples.remnant_kick_mag)))
-    return samples
-
-
-def plot_corner(samples, f, weights=False):
-    logging.info(f"Plotting {f}")
-    s = samples[
-        ["mass_1_source_new", "mass_2_source_new", "remnant_new_source_m_remnant_mass",
-         "chi_p", "chi_eff", "mass_ratio", "tilt_1", "tilt_2",
-         "luminosity_distance", "redshift", "remnant_new_source_m_remnant_kick_mag"]]
-    corner_kwargs = CORNER_KWARGS.copy()
-    corner_kwargs.update(dict(
-        labels=[r"$m_1$(source)", r"$m_2$(source)", r"$m_rem$(source)", r"$\chi_p$",
-                r"$\chi_{eff}$", "q", "tilt_1", "tilt_2", r"$d_l$",
-                r"$z$",
-                r"$|\vec{v}_k|$ km/s"]))
-
-    if weights:
-        corner.corner(s, weights=samples.kick_weight, **corner_kwargs)
-    else:
-        corner.corner(s, **corner_kwargs)
-    plt.suptitle(f"{f}", fontsize=30, fontdict=dict(color='darkblue'))
-    plt.savefig(f"{f}.png")
-    plt.close()
+def get_truth_values(truth_csv, truth_idx):
+    return pd.read_csv(truth_csv).iloc[truth_idx].to_dict()
 
 
 def main():
-    samples = load_samples(result_file="NRsur(PHM)_pesummary_with_kicks.dat")
-    plot_corner(samples, f="No Reweighting")
+    args = parse_cli_args()
+    if args.true_file:
+        truths = get_truth_values(args.true_file, args.true_idx)
+        args.kick_mean = truths["remnant_kick_mag"]
+        args.kick_sigma = 50
+    else:
+        truths = {}
+    samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
+                      kick_sigma=args.kick_sigma, truths=truths)
 
-    samples = add_new_kick_distribution_weights(samples, kick_mean=200, kick_sigma=50)
-    plot_corner(samples, f="kick N(200, 50)", weights=True)
+    fname = args.result.replace(".csv", "no_reweighting_corner.png")
+    samples.plot_corner(f=fname)
 
-    samples = add_new_kick_distribution_weights(samples, kick_mean=200, kick_sigma=100)
-    plot_corner(samples, f="kick N(200, 100)", weights=True)
-
-    samples = add_new_kick_distribution_weights(samples, kick_mean=200, kick_sigma=200)
-    plot_corner(samples, f="kick N(200, 200)", weights=True)
+    fname = args.result.replace(".csv", "kick_mu{}_sigma{}_corner.png")
+    samples.plot_corner(f=fname, weights=True)
 
 
 if __name__ == "__main__":
