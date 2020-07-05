@@ -40,7 +40,6 @@ PARAMS = dict(
     tilt_1=r'tilt_1',
     tilt_2=r'tilt_2',
     luminosity_distance=r'$d_l$',
-    redshift=r'$z$',
     remnant_kick_mag=r'$|\\vec{v}_k|$ km/s'
 )
 
