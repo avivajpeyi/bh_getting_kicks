@@ -97,6 +97,7 @@ class Samples:
             np.exp(kick_prior.logpdf(self.posterior.remnant_kick_mag)))
 
     def plot_corner(self, f, title, weights=False):
+        assert f[-4:] == ".png", f"{f} is not a png"
         logging.info(f"Plotting {f}")
         s = self.posterior[list(PARAMS.keys())]
         corner_kwargs = CORNER_KWARGS.copy()
@@ -140,10 +141,10 @@ def main():
     samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
                       kick_sigma=args.kick_sigma, truths=truths)
 
-    fname = args.samples_csv.replace(".csv", "no_reweighting_corner.png")
+    fname = args.samples_csv.replace(".dat", "no_reweighting_corner.png")
     samples.plot_corner(f=fname, title="No Reweigting")
 
-    fname = args.samples_csv.replace(".csv",
+    fname = args.samples_csv.replace(".dat",
                                      f"kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
     samples.plot_corner(f=fname, weights=True, title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format("N",int(args.kick_mean), int(args.kick_sigma)))
 
