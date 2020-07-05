@@ -144,7 +144,7 @@ def combine_images_horizontally(fnames):
         new_im.paste(im, (x_offset, 0))
         x_offset += im.size[0]
 
-    new_im.save(os.path.dirname(fnames[0]) + "corner.png")
+    new_im.save(os.path.join(os.path.dirname(fnames[0]), "corner.png"))
 
 
 def main():
