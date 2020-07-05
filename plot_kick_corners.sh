@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=corner_plotter
 #SBATCH --array=0-99
-#SBATCH --time=0:04:00
-#SBATCH --output=corner_plotter.log
+#SBATCH --time=0:10:00
+#SBATCH --output=corner_plotter_${SLURM_ARRAY_TASK_ID}.log
 #SBATCH --mem-per-cpu=1000
 
 source ~/.bash_profile
