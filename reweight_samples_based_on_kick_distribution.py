@@ -22,7 +22,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from bilby.gw import conversion
+from matplotlib import rcParams
 from scipy.stats import norm
+
+rcParams["font.size"] = 16
+rcParams["font.family"] = "sans-serif"
+rcParams["font.sans-serif"] = ["Computer Modern Sans"]
+rcParams["text.usetex"] = True
+rcParams["text.latex.preamble"] = r"\usepackage{cmbright}"
 
 from corner_kwargs import CORNER_KWARGS
 
@@ -137,7 +144,8 @@ def main():
     fname = args.samples_csv.replace(".csv", "no_reweighting_corner.png")
     samples.plot_corner(f=fname)
 
-    fname = args.samples_csv.replace(".csv", f"kick_mu{args.kick_mean}_sigma{args.kick_sigma}_corner.png")
+    fname = args.samples_csv.replace(".csv",
+                                     f"kick_mu{args.kick_mean}_sigma{args.kick_sigma}_corner.png")
     samples.plot_corner(f=fname, weights=True)
 
 
