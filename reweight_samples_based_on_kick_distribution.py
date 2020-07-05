@@ -21,6 +21,7 @@ import corner
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from PIL import Image
 from bilby.gw import conversion
 from matplotlib import rcParams
 from scipy.stats import norm
@@ -129,6 +130,23 @@ def validate_cli_args(parsed_args):
             parsed_args.true_file), f"True file {parsed_args.true_file} cant be accessed"
 
 
+def combine_images_horizontally(fnames):
+    images = [Image.open(x) for x in fnames]
+    widths, heights = zip(*(i.size for i in images))
+
+    total_width = sum(widths)
+    max_height = max(heights)
+
+    new_im = Image.new('RGB', (total_width, max_height))
+
+    x_offset = 0
+    for im in images:
+        new_im.paste(im, (x_offset, 0))
+        x_offset += im.size[0]
+
+    new_im.save(os.path.dirname(fnames[0]), "corner.png")
+
+
 def main():
     args = parse_cli_args()
     validate_cli_args(args)
@@ -141,14 +159,16 @@ def main():
     samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
                       kick_sigma=args.kick_sigma, truths=truths)
 
-    fname = args.samples_csv.replace(".dat", "no_reweighting_corner.png")
-    samples.plot_corner(f=fname, title="No Reweigting")
+    fname1 = args.samples_csv.replace(".dat", "_no_reweighting_corner.png")
+    samples.plot_corner(f=fname1, title="No Reweigting")
 
-    fname = args.samples_csv.replace(".dat",
-                                     f"kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
-    samples.plot_corner(f=fname, weights=True,
+    fname2 = args.samples_csv.replace(".dat",
+                                      f"_kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
+    samples.plot_corner(f=fname2, weights=True,
                         title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format(
                             int(args.kick_mean), int(args.kick_sigma)))
+
+    combine_images_horizontally([fname1, fname2])
 
 
 if __name__ == "__main__":
