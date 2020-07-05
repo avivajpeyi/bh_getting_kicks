@@ -73,6 +73,7 @@ class Samples:
     @staticmethod
     def load_posterior(result_file):
         """Loads posterior from result file"""
+        logging.info(f"Loading {result_file}")
         samples = pd.read_csv(result_file)
         samples = conversion.generate_component_spins(samples)
         try:
@@ -82,7 +83,6 @@ class Samples:
                 f"Error: {e}. "
                 f"There are no `remnant_kick_mag` posterior. "
                 f"The posterior present are for {list(samples.columns.values)}")
-        logging.info(f"Loaded {result_file}")
         return samples
 
     def add_new_kick_distribution_weights(self, kick_mean, kick_sigma):
@@ -135,10 +135,10 @@ def main():
     samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
                       kick_sigma=args.kick_sigma, truths=truths)
 
-    fname = args.result.replace(".csv", "no_reweighting_corner.png")
+    fname = args.samples_csv.replace(".csv", "no_reweighting_corner.png")
     samples.plot_corner(f=fname)
 
-    fname = args.result.replace(".csv", "kick_mu{}_sigma{}_corner.png")
+    fname = args.samples_csv.replace(".csv", f"kick_mu{args.kick_mean}_sigma{args.kick_sigma}_corner.png")
     samples.plot_corner(f=fname, weights=True)
 
 
