@@ -1,6 +1,8 @@
 import logging
-from typing import List, Optional
 import math
+from typing import List, Optional
+
+import numpy as np
 import surfinBH
 
 BH_FIT = surfinBH.LoadFits("NRSur7dq4Remnant")
@@ -170,18 +172,28 @@ def merge_bbh_pair(bh_1, bh_2):
 
     # Merging BH
     total_mass = bh_1.mass + bh_2.mass
-    mf, chif, vf, mf_err, chif_err, vf_err = BH_FIT.all(q=q, chiA=chi_a, chiB=chi_b)
-    remnant = BlackHole(
-        mass=mf * total_mass, mass_unc=mf_err * total_mass,
-        spin=chif, spin_unc=chif_err,
-        kick=vf, kick_unc=vf_err,  # units of c
-        parents=[bh_1, bh_2]
-    )
+    try:
+        mf, chif, vf, mf_err, chif_err, vf_err = BH_FIT.all(q=q, chiA=chi_a, chiB=chi_b)
+        remnant = BlackHole(
+            mass=mf * total_mass, mass_unc=mf_err * total_mass,
+            spin=chif, spin_unc=chif_err,
+            kick=vf, kick_unc=vf_err,  # units of c
+            parents=[bh_1, bh_2]
+        )
+    except ValueError as e:
+        logging.error(f"Cannot merge {bh_2} {bh_2}: {e}. Returning Nans.")
+        nan_vec = [np.NaN, np.NaN, np.NaN]
+        remnant = BlackHole(
+            mass=np.NaN, mass_unc=np.NaN,
+            spin=nan_vec, spin_unc=nan_vec,
+            kick=nan_vec, kick_unc=nan_vec,  # units of c
+            parents=[bh_1, bh_2]
+        )
     return remnant
 
 
 def mag(x):
-    return math.sqrt(math.fsum([i ** 2 for i in x]))
+    return np.linalg.norm(x)
 
 
 if __name__ == "__main__":
