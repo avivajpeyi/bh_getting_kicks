@@ -42,9 +42,9 @@ PARAMS = dict(
     remnant_mass=r'$m_rem$(source)',
     chi_p=r'$\chi_p$',
     chi_eff=r'$\chi_{eff}$',
-    mass_ratio=r'q',
-    tilt_1=r'tilt_1',
-    tilt_2=r'tilt_2',
+    mass_ratio=r'$q$',
+    tilt_1=r'$tilt_1$',
+    tilt_2=r'$tilt_2$',
     luminosity_distance=r'$d_l$',
     remnant_kick_mag=r'$|\vec{v}_k|$ km/s'
 )
