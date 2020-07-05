@@ -61,13 +61,7 @@ def parse_cli_args(args=sys.argv[1:]):
 
     parsed_args = parser.parse_args(args)
 
-    assert (os.path.isfile(parsed_args.samples_csv),
-            f"Result {parsed_args.samples_csv} is not a csv file that can be accessed")
 
-    if parsed_args.true_file is not None:
-        assert parsed_args.true_idx is not None, "A idx for the true values must be passed"
-        assert (os.path.isfile(parsed_args.true_file),
-                f"True file {parsed_args.true_file} cant be accessed")
     return parsed_args
 
 
@@ -118,8 +112,18 @@ def get_truth_values(truth_csv, truth_idx):
     return pd.read_csv(truth_csv).iloc[truth_idx].to_dict()
 
 
+def validate_cli_args(parsed_args):
+    assert (os.path.isfile(parsed_args.samples_csv),
+            f"Result {parsed_args.samples_csv} is not a csv file that can be accessed")
+
+    if parsed_args.true_file is not None:
+        assert parsed_args.true_idx is not None, "A idx for the true values must be passed"
+        assert (os.path.isfile(parsed_args.true_file),
+                f"True file {parsed_args.true_file} cant be accessed")
+
 def main():
     args = parse_cli_args()
+    validate_cli_args(args)
     if args.true_file:
         truths = get_truth_values(args.true_file, args.true_idx)
         args.kick_mean = truths["remnant_kick_mag"]
