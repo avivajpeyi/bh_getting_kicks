@@ -28,7 +28,7 @@ from scipy.stats import norm
 rcParams["font.size"] = 16
 rcParams["font.family"] = "sans-serif"
 rcParams["font.sans-serif"] = ["Computer Modern Sans"]
-rcParams["text.usetex"] = True
+rcParams["text.usetex"] = False
 rcParams["text.latex.preamble"] = r"\usepackage{cmbright}"
 
 from corner_kwargs import CORNER_KWARGS
