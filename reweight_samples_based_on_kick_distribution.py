@@ -61,7 +61,6 @@ def parse_cli_args(args=sys.argv[1:]):
 
     parsed_args = parser.parse_args(args)
 
-
     return parsed_args
 
 
@@ -98,7 +97,7 @@ class Samples:
         corner_kwargs = CORNER_KWARGS.copy()
         corner_kwargs.update(dict(labels=list(PARAMS.values())))
         if len(self.truths) > 0:
-            corner_kwargs.update(dict(truths=[truths[k] for k in PARAMS.keys()]))
+            corner_kwargs.update(dict(truths=[self.truths[k] for k in PARAMS.keys()]))
         if weights:
             corner.corner(s, weights=self.posterior.kick_weight, **corner_kwargs)
         else:
@@ -113,13 +112,16 @@ def get_truth_values(truth_csv, truth_idx):
 
 
 def validate_cli_args(parsed_args):
-    assert (os.path.isfile(parsed_args.samples_csv),
-            f"Result {parsed_args.samples_csv} is not a csv file that can be accessed")
+    assert os.path.isfile(
+        parsed_args.samples_csv), \
+        f"Result {parsed_args.samples_csv} is not a csv file that can be accessed"
 
     if parsed_args.true_file is not None:
-        assert parsed_args.true_idx is not None, "A idx for the true values must be passed"
-        assert (os.path.isfile(parsed_args.true_file),
-                f"True file {parsed_args.true_file} cant be accessed")
+        assert parsed_args.true_idx is not None, \
+            "A idx for the true values must be passed"
+        assert os.path.isfile(
+            parsed_args.true_file), f"True file {parsed_args.true_file} cant be accessed"
+
 
 def main():
     args = parse_cli_args()
