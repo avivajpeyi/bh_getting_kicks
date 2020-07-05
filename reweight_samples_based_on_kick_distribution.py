@@ -107,7 +107,8 @@ class Samples:
             corner.corner(s, weights=self.posterior.kick_weight, **corner_kwargs)
         else:
             corner.corner(s, **corner_kwargs)
-        plt.suptitle(f"{f}", fontsize=30, fontdict=dict(color='darkblue'))
+        title = os.path.splitext(os.path.basename(f))[0]
+        plt.suptitle(f"{title}", fontsize=30, fontdict=dict(color='darkblue'))
         plt.savefig(f"{f}.png")
         plt.close()
 
