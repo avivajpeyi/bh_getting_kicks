@@ -144,7 +144,7 @@ def main():
     samples.plot_corner(f=fname)
 
     fname = args.samples_csv.replace(".csv",
-                                     f"kick_mu{args.kick_mean}_sigma{args.kick_sigma}_corner.png")
+                                     f"kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
     samples.plot_corner(f=fname, weights=True)
 
 
