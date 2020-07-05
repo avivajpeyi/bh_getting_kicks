@@ -2,7 +2,7 @@
 #SBATCH --job-name=bh_kick_samples
 #SBATCH --array=0-99
 #SBATCH --time=2:00:00
-#SBATCH --output=bh_kick_samples.log
+#SBATCH --output=bh_kick_samples_%a.out
 #SBATCH --mem-per-cpu=1000
 
 source ~/.bash_profile
@@ -16,3 +16,4 @@ FNAME=$(printf "/fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/ou
 echo "Adding kicks to " "$FNAME"
 
 python calculate_kick_vel_from_samples.py $FNAME
+

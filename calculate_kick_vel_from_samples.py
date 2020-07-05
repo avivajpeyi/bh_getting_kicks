@@ -16,6 +16,9 @@ logging.getLogger().setLevel(logging.INFO)
 class Samples:
     def __init__(self, filename: str):
         self.filename = filename
+        self.outfile = self.filename.replace(".dat", "_with_kicks.dat")
+        if os.path.isfile(self.outfile):
+            raise FileExistsError(f"{self.outfile} already present! Terminating job.")
         self.posterior = self.read_file(filename)
 
     @staticmethod
@@ -50,9 +53,8 @@ class Samples:
 
     def save_samples_with_kicks(self):
         self.calculate_remnant_kick_velocity()
-        filename = self.filename.replace(".dat", "_with_kicks.dat")
-        self.posterior.to_csv(filename)
-        logging.info(f"Saved posterior with kicks in {filename}")
+        self.posterior.to_csv(self.outfile)
+        logging.info(f"Saved posterior with kicks in {self.outfile}")
 
 
 def get_sample_kick(s):
