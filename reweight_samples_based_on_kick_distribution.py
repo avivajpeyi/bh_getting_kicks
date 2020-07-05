@@ -130,7 +130,7 @@ def validate_cli_args(parsed_args):
             parsed_args.true_file), f"True file {parsed_args.true_file} cant be accessed"
 
 
-def combine_images_horizontally(fnames):
+def combine_images_horizontally(fnames, f):
     images = [Image.open(x) for x in fnames]
     widths, heights = zip(*(i.size for i in images))
 
@@ -144,7 +144,7 @@ def combine_images_horizontally(fnames):
         new_im.paste(im, (x_offset, 0))
         x_offset += im.size[0]
 
-    new_im.save(os.path.join(os.path.dirname(fnames[0]), "corner.png"))
+    new_im.save(f)
 
 
 def main():
@@ -168,7 +168,8 @@ def main():
                         title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format(
                             int(args.kick_mean), int(args.kick_sigma)))
 
-    combine_images_horizontally([fname1, fname2])
+    fname3 = args.samples_csv.replace(".dat", "_corner.png")
+    combine_images_horizontally([fname1, fname2], f=fname3)
 
 
 if __name__ == "__main__":
