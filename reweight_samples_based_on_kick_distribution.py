@@ -74,6 +74,7 @@ class Samples:
     def __init__(self, samples_csv, kick_mean, kick_sigma, truths):
         self.truths = truths
         self.posterior = self.load_posterior(samples_csv)
+        print(self.posterior.remnant_kick_mag.describe())
         self.add_new_kick_distribution_weights(kick_mean, kick_sigma)
 
     @staticmethod
@@ -81,6 +82,7 @@ class Samples:
         """Loads posterior from result file"""
         logging.info(f"Loading {result_file}")
         samples = pd.read_csv(result_file)
+        samples = samples.dropna()
         samples = conversion.generate_component_spins(samples)
         try:
             assert len(samples.remnant_kick_mag) > 0

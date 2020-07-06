@@ -6,6 +6,7 @@ __pycache__/
 *$py.class
 *.idea
 output
+*.json
 # C extensions
 *.so
 
