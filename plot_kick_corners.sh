@@ -15,4 +15,4 @@ FNAME=$(printf "/fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/ou
 
 echo "Plotting " "$FNAME"
 
-python reweight_samples_based_on_kick_distribution.py --samples-csv $FNAME --true-file datafiles/injections.csv --true-idx $SLURM_ARRAY_TASK_ID
+python plot_corner_weighted_with_kick.py --samples-csv $FNAME --true-file datafiles/injections.csv --true-idx $SLURM_ARRAY_TASK_ID
