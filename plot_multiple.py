@@ -18,7 +18,7 @@ FILE = "/fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundre
 def main():
     truths = pd.read_csv('datafiles/injections.csv')
     for index, truth in tqdm.tqdm(truths.iterrows(), total=len(truths)):
-        f = FILE.format(num=index, num=index)
+        f = FILE.format(num=index)
         kick_mean = truth['remnant_kick_mag']
         kick_sigma = 50
 
