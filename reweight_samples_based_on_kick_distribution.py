@@ -18,6 +18,7 @@ import os
 import sys
 
 import corner
+import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -26,21 +27,21 @@ from bilby.gw import conversion
 from matplotlib import rcParams
 from scipy.stats import norm
 
+from corner_kwargs import CORNER_KWARGS, VIOLET_COLOR, BILBY_BLUE_COLOR
+
 rcParams["font.size"] = 16
 rcParams["font.family"] = "sans-serif"
 rcParams["font.sans-serif"] = ["Computer Modern Sans"]
 rcParams["text.usetex"] = True
-
-from corner_kwargs import CORNER_KWARGS
 
 logging.getLogger().setLevel(logging.INFO)
 
 KICK_WEIGHT = "kick_weight"
 
 PARAMS = dict(
-    mass_1_source=r'$m_1$(source)',
-    mass_2_source=r'$m_2$(source)',
-    remnant_mass=r'$m_{rem}$(source)',
+    mass_1_source=r'$m_1^{source}$',
+    mass_2_source=r'$m_2^{source}$',
+    remnant_mass=r'$m_{rem}^{source}$',
     chi_p=r'$\chi_p$',
     chi_eff=r'$\chi_{eff}$',
     mass_ratio=r'$q$',
@@ -73,9 +74,11 @@ def parse_cli_args(args=sys.argv[1:]):
 class Samples:
     def __init__(self, samples_csv, kick_mean, kick_sigma, truths):
         self.truths = truths
+        self.kick_mean = kick_mean
+        self.kick_sigma = kick_sigma
         self.posterior = self.load_posterior(samples_csv)
-        print(self.posterior.remnant_kick_mag.describe())
         self.add_new_kick_distribution_weights(kick_mean, kick_sigma)
+        print(self.posterior[["remnant_kick_mag", KICK_WEIGHT]].describe())
 
     @staticmethod
     def load_posterior(result_file):
@@ -99,19 +102,50 @@ class Samples:
         self.posterior[KICK_WEIGHT] = np.abs(
             np.exp(kick_prior.logpdf(self.posterior.remnant_kick_mag)))
 
-    def plot_corner(self, f, title, weights=False):
-        assert f[-4:] == ".png", f"{f} is not a png"
-        logging.info(f"Plotting {f}")
-        s = self.posterior[list(PARAMS.keys())]
+    def get_plotting_kwargs(self):
         corner_kwargs = CORNER_KWARGS.copy()
         corner_kwargs.update(dict(labels=list(PARAMS.values())))
         if len(self.truths) > 0:
             corner_kwargs.update(dict(truths=[self.truths[k] for k in PARAMS.keys()]))
+        return corner_kwargs
+
+    def plot_corner(self, f, title, weights=False):
+        assert f[-4:] == ".png", f"{f} is not a png"
+        logging.info(f"Plotting {f}")
+        s = self.posterior[list(PARAMS.keys())]
+        corner_kwargs = self.get_plotting_kwargs()
         if weights:
+            corner_kwargs.update(dict(color=VIOLET_COLOR))
             corner.corner(s, weights=self.posterior.kick_weight, **corner_kwargs)
         else:
+            corner_kwargs.update(dict(color=BILBY_BLUE_COLOR))
             corner.corner(s, **corner_kwargs)
         plt.suptitle(f"{title}", fontsize=30, fontdict=dict(color='darkblue'))
+        plt.savefig(f)
+        plt.close()
+
+    def plot_overlaid_corner(self, f):
+        s1 = self.posterior.copy()[list(PARAMS.keys())]
+        s2 = self.posterior.sample(frac=0.1, weights=KICK_WEIGHT, replace=False)[
+            list(PARAMS.keys())]
+        range = get_range(s1)
+
+        normalising_weights_s2 = np.ones(len(s2)) * len(s1) / len(s2)
+        corner_kwargs = self.get_plotting_kwargs()
+        corner_kwargs.update(dict(range=range))
+        fig = corner.corner(s1, **corner_kwargs)
+        corner_kwargs.update(dict(color=VIOLET_COLOR))
+        corner.corner(s2, fig=fig, weights=normalising_weights_s2, **corner_kwargs)
+
+        orig_line = mlines.Line2D([], [], color=BILBY_BLUE_COLOR,
+                                  label="Original Posterior")
+        weighted_line = mlines.Line2D([], [], color=VIOLET_COLOR,
+                                      label=r"Posterior Reweighted with {}".format(
+                                          get_normal_string(int(self.kick_mean),
+                                                            int(self.kick_sigma))
+                                      ))
+        plt.legend(handles=[orig_line, weighted_line], fontsize=30, frameon=False,
+                   bbox_to_anchor=(1, len(PARAMS) + 0.5), loc="upper right")
         plt.savefig(f)
         plt.close()
 
@@ -149,6 +183,27 @@ def combine_images_horizontally(fnames, f):
     new_im.save(f)
 
 
+def process_sample(samples, args):
+    fname1 = args.samples_csv.replace(".dat", "_no_reweighting_corner.png")
+    samples.plot_corner(f=fname1, title="No Reweigting")
+
+    fname2 = args.samples_csv.replace(".dat",
+                                      f"_kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
+    samples.plot_corner(f=fname2, weights=True,
+                        title=r"Reweighted with {}".format(
+                            get_normal_string(
+                                int(args.kick_mean),
+                                int(args.kick_sigma)
+                            )
+                        ))
+
+    fname3 = args.samples_csv.replace(".dat", "_overlaid.png")
+    samples.plot_overlaid_corner(fname3)
+
+    fname4 = args.samples_csv.replace(".dat", "_corner.png")
+    combine_images_horizontally([fname3, fname1, fname2], f=fname4)
+
+
 def main():
     args = parse_cli_args()
     validate_cli_args(args)
@@ -160,19 +215,20 @@ def main():
         truths = {}
     samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
                       kick_sigma=args.kick_sigma, truths=truths)
+    process_sample(samples, args)
 
-    fname1 = args.samples_csv.replace(".dat", "_no_reweighting_corner.png")
-    samples.plot_corner(f=fname1, title="No Reweigting")
 
-    fname2 = args.samples_csv.replace(".dat",
-                                      f"_kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
-    samples.plot_corner(f=fname2, weights=True,
-                        title=r"Reweighted with $\mathcal{{N}}(\mu={},\sigma={})$".format(
-                            int(args.kick_mean), int(args.kick_sigma)))
+def get_normal_string(mean, sigma):
+    return r"$\mathcal{{N}}(\mu={},\sigma={})$".format(mean, sigma)
 
-    fname3 = args.samples_csv.replace(".dat", "_corner.png")
-    combine_images_horizontally([fname1, fname2], f=fname3)
+
+def get_range(samples):
+    return [[samples[l].min(), samples[l].max()] for l in samples]
 
 
 if __name__ == "__main__":
-    main()
+    truths = pd.read_csv('datafiles/injections.csv').iloc[11].to_dict()
+    samples = Samples(samples_csv='injection_11_0_posterior_samples_with_kicks.dat',
+                      kick_mean=truths['remnant_kick_mag'],
+                      kick_sigma=50, truths=truths)
+    samples.plot_overlaid_corner("test.png")

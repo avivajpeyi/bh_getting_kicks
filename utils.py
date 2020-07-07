@@ -13,7 +13,7 @@ def hierarchy_pos(graph, root=None, width=1., vert_gap=0.2, vert_loc=0, xcenter=
     From Joel's answer at https://stackoverflow.com/a/29597209/2966723.
     Licensed under Creative Commons Attribution-Share Alike
 
-    If the graph is a tree this will return the positions to plot this in a
+    If the graph is a tree this will return the positions to overlaid_corner this in a
     hierarchical layout.
 
     graph: the graph (must be a tree)
