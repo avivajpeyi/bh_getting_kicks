@@ -39,7 +39,7 @@ def main():
         samples.plot_corner(
             f=fname2, weights=True,
             title=r"Reweighted with {}".format(
-                get_normal_string(
+                plot_corner_weighted_with_kick.get_normal_string(
                     int(kick_mean),
                     int(kick_sigma)
                 )
