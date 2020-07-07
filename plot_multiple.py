@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import plot_corner_weighted_with_kick
 import tqdm
 import argparse
+import pandas as pd
 
 FILE = "/fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_{num}/result/injection_{num}_0_posterior_samples_with_kicks.dat"
 
@@ -48,7 +49,8 @@ def main():
         samples.plot_overlaid_corner(fname3)
 
         fname4 = f.replace(".dat", "_corner.png")
-        plot_corner_weighted_with_kick.combine_images_horizontally([fname3, fname1, fname2], f=fname4)
+        plot_corner_weighted_with_kick.combine_images_horizontally(
+            [fname3, fname1, fname2], f=fname4)
 
 
 if __name__ == "__main__":
