@@ -182,9 +182,6 @@ def combine_images_horizontally(fnames, f):
 
     new_im.save(f)
 
-
-def process_samples
-
 def process_sample(samples, args):
     fname1 = args.samples_csv.replace(".dat", "_no_reweighting_corner.png")
     samples.plot_corner(f=fname1, title="No Reweigting")
