@@ -182,28 +182,26 @@ def combine_images_horizontally(fnames, f):
 
     new_im.save(f)
 
-def process_sample(samples, args):
-    fname1 = args.samples_csv.replace(".dat", "_no_reweighting_corner.png")
+
+def process_sample(samples, kick_mean, kick_sigma, f):
+    fname1 = f.replace(".dat", "_no_reweighting_corner.png")
     samples.plot_corner(f=fname1, title="No Reweigting")
 
-    fname2 = args.samples_csv.replace(".dat",
-                                      f"_kick_mu{int(args.kick_mean)}_sigma{int(args.kick_sigma)}_corner.png")
+    fname2 = f.replace(".dat",
+                       f"_kick_mu{int(kick_mean)}_sigma{int(kick_sigma)}_corner.png")
     samples.plot_corner(f=fname2, weights=True,
                         title=r"Reweighted with {}".format(
                             get_normal_string(
-                                int(args.kick_mean),
-                                int(args.kick_sigma)
+                                int(kick_mean),
+                                int(kick_sigma)
                             )
                         ))
 
-    fname3 = args.samples_csv.replace(".dat", "_overlaid.png")
+    fname3 = f.replace(".dat", "_overlaid.png")
     samples.plot_overlaid_corner(fname3)
 
-    fname4 = args.samples_csv.replace(".dat", "_corner.png")
+    fname4 = f.replace(".dat", "_corner.png")
     combine_images_horizontally([fname3, fname1, fname2], f=fname4)
-
-
-
 
 
 def get_normal_string(mean, sigma):
@@ -212,6 +210,7 @@ def get_normal_string(mean, sigma):
 
 def get_range(samples):
     return [[samples[l].min(), samples[l].max()] for l in samples]
+
 
 def main():
     args = parse_cli_args()
@@ -224,7 +223,8 @@ def main():
         truths = {}
     samples = Samples(samples_csv=args.samples_csv, kick_mean=args.kick_mean,
                       kick_sigma=args.kick_sigma, truths=truths)
-    process_sample(samples, args)
+    process_sample(samples, kick_mean=args.kick_mean,
+                   kick_sigma=args.kick_sigma, f=args.samples_csv)
 
 
 def test():
@@ -232,7 +232,8 @@ def test():
     samples = Samples(samples_csv='injection_11_0_posterior_samples_with_kicks.dat',
                       kick_mean=truths['remnant_kick_mag'],
                       kick_sigma=50, truths=truths)
-    samples.plot_overlaid_corner("test.png")
+    process_sample(samples, kick_mean=truths['remnant_kick_mag'],
+                   kick_sigma=50, f='injection_11_0_posterior_samples_with_kicks.dat')
 
 if __name__ == "__main__":
-    main()
+    test()
