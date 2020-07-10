@@ -81,7 +81,6 @@ class Samples:
         self.kick_sigma = kick_sigma
         self.posterior = self.load_posterior(samples_csv)
         self.add_new_kick_distribution_weights(kick_mean, kick_sigma)
-        self.reweighted_posterior = self.get_reweighted_posterior()
         print(self.posterior[["remnant_kick_mag", KICK_WEIGHT]].describe())
 
     @staticmethod
@@ -138,6 +137,7 @@ class Samples:
 
     def plot_overlaid_corner(self, f):
         s1 = self.posterior.copy()[list(PARAMS.keys())]
+        self.reweighted_posterior = self.get_reweighted_posterior()
         s2 = self.get_reweighted_posterior()[list(PARAMS.keys())]
         range = get_range(s1)
 
@@ -166,6 +166,7 @@ class Samples:
         quantiles = self.get_plotting_kwargs()['quantiles']
         s = self.posterior[[param]]
         original_qtles = corner.quantile(x=s, q=quantiles)
+        self.reweighted_posterior = self.get_reweighted_posterior()
         rw = self.reweighted_posterior[[param]]
         reweighted_qtles = corner.quantile(x=rw, q=quantiles)
         return dict(
