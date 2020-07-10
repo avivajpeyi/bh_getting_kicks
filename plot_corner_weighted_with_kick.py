@@ -29,26 +29,29 @@ from scipy.stats import norm
 
 from corner_kwargs import CORNER_KWARGS, VIOLET_COLOR, BILBY_BLUE_COLOR
 
-rcParams["font.size"] = 16
-rcParams["font.family"] = "sans-serif"
+rcParams["font.size"] = 20
+rcParams["font.family"] = "serif"
 rcParams["font.sans-serif"] = ["Computer Modern Sans"]
 rcParams["text.usetex"] = True
+rcParams['axes.labelsize'] = 30
+rcParams['axes.titlesize'] = 30
+rcParams['axes.labelpad'] = 20
 
 logging.getLogger().setLevel(logging.INFO)
 
 KICK_WEIGHT = "kick_weight"
 
 PARAMS = dict(
-    mass_1_source=r'$m_1^{source}$',
-    mass_2_source=r'$m_2^{source}$',
-    remnant_mass=r'$m_{rem}^{source}$',
+    #mass_1_source=r'$m_1^{source}$',
+    #mass_2_source=r'$m_2^{source}$',
+    #remnant_mass=r'$m_{rem}^{source}$',
     chi_p=r'$\chi_p$',
-    chi_eff=r'$\chi_{eff}$',
+    #chi_eff=r'$\chi_{eff}$',
     mass_ratio=r'$q$',
-    tilt_1=r'$tilt_1$',
-    tilt_2=r'$tilt_2$',
-    luminosity_distance=r'$d_l$',
-    remnant_kick_mag=r'$|\vec{v}_k|$ km/s'
+    #tilt_1=r'$tilt_1$',
+    #tilt_2=r'$tilt_2$',
+    #luminosity_distance=r'$d_l$',
+    remnant_kick_mag=r'$|\vec{v}_k|\ $km/s'
 )
 
 
@@ -114,6 +117,7 @@ class Samples:
         logging.info(f"Plotting {f}")
         s = self.posterior[list(PARAMS.keys())]
         corner_kwargs = self.get_plotting_kwargs()
+        corner_kwargs.update(dict(label_kwargs=dict(labelpad=20, fontsize=30)))
         if weights:
             corner_kwargs.update(dict(color=VIOLET_COLOR))
             corner.corner(s, weights=self.posterior.kick_weight, **corner_kwargs)
@@ -133,6 +137,7 @@ class Samples:
         normalising_weights_s2 = np.ones(len(s2)) * len(s1) / len(s2)
         corner_kwargs = self.get_plotting_kwargs()
         corner_kwargs.update(dict(range=range))
+        corner_kwargs.update(dict(label_kwargs=dict(labelpad=50, fontsize=30)))
         fig = corner.corner(s1, **corner_kwargs)
         corner_kwargs.update(dict(color=VIOLET_COLOR))
         corner.corner(s2, fig=fig, weights=normalising_weights_s2, **corner_kwargs)
@@ -140,12 +145,13 @@ class Samples:
         orig_line = mlines.Line2D([], [], color=BILBY_BLUE_COLOR,
                                   label="Original Posterior")
         weighted_line = mlines.Line2D([], [], color=VIOLET_COLOR,
-                                      label=r"Posterior Reweighted with {}".format(
+                                      label=r"Reweighted Posterior".format(
                                           get_normal_string(int(self.kick_mean),
                                                             int(self.kick_sigma))
                                       ))
-        plt.legend(handles=[orig_line, weighted_line], fontsize=30, frameon=False,
-                   bbox_to_anchor=(1, len(PARAMS) + 0.5), loc="upper right")
+        true_line =  mlines.Line2D([], [], color='tab:orange', label='Injected Value')
+        plt.legend(handles=[orig_line, weighted_line, true_line], fontsize=25, frameon=False,
+                   bbox_to_anchor=(1, len(PARAMS)), loc="upper right")
         plt.savefig(f)
         plt.close()
 
@@ -236,4 +242,4 @@ def test():
                    kick_sigma=50, f='injection_11_0_posterior_samples_with_kicks.dat')
 
 if __name__ == "__main__":
-    test()
+    main()
