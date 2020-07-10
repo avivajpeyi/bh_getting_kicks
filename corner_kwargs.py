@@ -13,7 +13,8 @@ CORNER_KWARGS = dict(
     plot_density=False,
     plot_datapoints=False,
     fill_contours=True,
-    show_titles=True,
     max_n_ticks=3,
+    verbose =True,
+    use_math_text=True
 )
 
