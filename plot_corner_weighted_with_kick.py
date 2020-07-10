@@ -81,6 +81,7 @@ class Samples:
         self.kick_sigma = kick_sigma
         self.posterior = self.load_posterior(samples_csv)
         self.add_new_kick_distribution_weights(kick_mean, kick_sigma)
+        self.reweighted_posterior = self.get_reweighted_posterior()
         print(self.posterior[["remnant_kick_mag", KICK_WEIGHT]].describe())
 
     @staticmethod
@@ -98,6 +99,13 @@ class Samples:
                 f"There are no `remnant_kick_mag` posterior. "
                 f"The posterior present are for {list(samples.columns.values)}")
         return samples
+
+    def get_reweighted_posterior(self):
+        return self.posterior.sample(
+            frac=0.1,
+            weights=KICK_WEIGHT,
+            replace=False
+        )
 
     def add_new_kick_distribution_weights(self, kick_mean, kick_sigma):
         logging.info(f"Adding kick weights based on N({kick_mean}, {kick_sigma})")
@@ -130,8 +138,7 @@ class Samples:
 
     def plot_overlaid_corner(self, f):
         s1 = self.posterior.copy()[list(PARAMS.keys())]
-        s2 = self.posterior.sample(frac=0.1, weights=KICK_WEIGHT, replace=False)[
-            list(PARAMS.keys())]
+        s2 = self.get_reweighted_posterior()[list(PARAMS.keys())]
         range = get_range(s1)
 
         normalising_weights_s2 = np.ones(len(s2)) * len(s1) / len(s2)
@@ -154,6 +161,17 @@ class Samples:
                    bbox_to_anchor=(1, len(PARAMS)), loc="upper right")
         plt.savefig(f)
         plt.close()
+
+    def get_quantiles_width(self, param):
+        quantiles = self.get_plotting_kwargs()['quantiles']
+        s = self.posterior[[param]]
+        original_qtles = corner.quantile(x=s, q=quantiles)
+        rw = self.reweighted_posterior[[param]]
+        reweighted_qtles = corner.quantile(x=rw, q=quantiles)
+        return dict(
+            original=original_qtles[1] - original_qtles[0],
+            reweighted=reweighted_qtles[1] - reweighted_qtles[0],
+        )
 
 
 def get_truth_values(truth_csv, truth_idx):
@@ -238,8 +256,8 @@ def test():
     samples = Samples(samples_csv='injection_11_0_posterior_samples_with_kicks.dat',
                       kick_mean=truths['remnant_kick_mag'],
                       kick_sigma=50, truths=truths)
-    process_sample(samples, kick_mean=truths['remnant_kick_mag'],
-                   kick_sigma=50, f='injection_11_0_posterior_samples_with_kicks.dat')
+    print(samples.get_quantiles_width(param='chi_p'))
+
 
 if __name__ == "__main__":
     main()
