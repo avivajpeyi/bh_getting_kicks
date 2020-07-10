@@ -10,235 +10,620 @@ module load swig/3.0.12-python-3.6.4
 module load framel/8.30
 module load metaio/8.4.0
 module load gsl/2.4
-  0%|          | 0/100 [00:00<?, ?it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_45/result/injection_45_0_posterior_samples_with_kicks.dat
+  0%|          | 0/100 [00:00<?, ?it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_0/result/injection_0_0_posterior_samples_with_kicks.dat
 INFO:numexpr.utils:Note: NumExpr detected 36 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
 INFO:numexpr.utils:NumExpr defaulting to 8 threads.
-INFO:root:Adding kick weights based on N(488.04300803961297, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_45/result/injection_45_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:matplotlib.texmanager:No LaTeX-compatible font found for the sans-serif font family in rcParams. Using default.
-INFO:matplotlib.texmanager:No LaTeX-compatible font found for the sans-serif font family in rcParams. Using default.
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_45/result/injection_45_0_posterior_samples_with_kicks_kick_mu488_sigma50_corner.png
-WARNING:matplotlib.font_manager:findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
- 46%|████▌     | 46/100 [00:21<00:25,  2.14it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_46/result/injection_46_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(1460.571883377137, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_46/result/injection_46_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_46/result/injection_46_0_posterior_samples_with_kicks_kick_mu1460_sigma50_corner.png
- 47%|████▋     | 47/100 [00:40<05:19,  6.02s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_47/result/injection_47_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(256.34164175748873, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_47/result/injection_47_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_47/result/injection_47_0_posterior_samples_with_kicks_kick_mu256_sigma50_corner.png
- 48%|████▊     | 48/100 [00:59<08:35,  9.91s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_48/result/injection_48_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(338.0342162297648, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_48/result/injection_48_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_48/result/injection_48_0_posterior_samples_with_kicks_kick_mu338_sigma50_corner.png
- 49%|████▉     | 49/100 [01:20<11:16, 13.27s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_49/result/injection_49_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(174.30031318422454, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_49/result/injection_49_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_49/result/injection_49_0_posterior_samples_with_kicks_kick_mu174_sigma50_corner.png
- 50%|█████     | 50/100 [01:44<13:49, 16.59s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_50/result/injection_50_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(491.06032970013536, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_50/result/injection_50_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_50/result/injection_50_0_posterior_samples_with_kicks_kick_mu491_sigma50_corner.png
- 51%|█████     | 51/100 [02:08<15:13, 18.65s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_51/result/injection_51_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(391.4986875497873, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_51/result/injection_51_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_51/result/injection_51_0_posterior_samples_with_kicks_kick_mu391_sigma50_corner.png
- 52%|█████▏    | 52/100 [02:32<16:13, 20.28s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_52/result/injection_52_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(1483.8359369626473, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_52/result/injection_52_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_52/result/injection_52_0_posterior_samples_with_kicks_kick_mu1483_sigma50_corner.png
- 53%|█████▎    | 53/100 [02:57<17:01, 21.72s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_53/result/injection_53_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(351.02193285951967, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_53/result/injection_53_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_53/result/injection_53_0_posterior_samples_with_kicks_kick_mu351_sigma50_corner.png
- 54%|█████▍    | 54/100 [03:20<16:59, 22.16s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_54/result/injection_54_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(259.6845105354353, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_54/result/injection_54_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_54/result/injection_54_0_posterior_samples_with_kicks_kick_mu259_sigma50_corner.png
- 55%|█████▌    | 55/100 [03:45<17:09, 22.88s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_55/result/injection_55_0_posterior_samples_with_kicks.dat
-INFO:root:Adding kick weights based on N(408.2572456048383, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_55/result/injection_55_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_55/result/injection_55_0_posterior_samples_with_kicks_kick_mu408_sigma50_corner.png
- 56%|█████▌    | 56/100 [04:08<16:56, 23.11s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_56/result/injection_56_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(745.2292928419945, 50)
+  1%|          | 1/100 [00:01<01:56,  1.18s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_1/result/injection_1_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(125.22493714268579, 50)
+  2%|▏         | 2/100 [00:01<01:44,  1.07s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_2/result/injection_2_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1390.1008479912134, 50)
+  3%|▎         | 3/100 [00:02<01:34,  1.02it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_3/result/injection_3_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(nan, 50)
 /fred/oz117/avajpeyi/.conda/envs/parallel_bilby/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py:899: RuntimeWarning: invalid value encountered in greater_equal
   return (a <= x) & (x <= b)
 /fred/oz117/avajpeyi/.conda/envs/parallel_bilby/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py:899: RuntimeWarning: invalid value encountered in less_equal
   return (a <= x) & (x <= b)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_56/result/injection_56_0_posterior_samples_with_kicks_no_reweighting_corner.png
- 57%|█████▋    | 57/100 [04:17<13:26, 18.75s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_57/result/injection_57_0_posterior_samples_with_kicks.dat
+  4%|▍         | 4/100 [00:03<01:27,  1.09it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_4/result/injection_4_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(470.61914235721457, 50)
+  5%|▌         | 5/100 [00:04<01:25,  1.11it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_5/result/injection_5_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(553.0290500963948, 50)
+  6%|▌         | 6/100 [00:05<01:19,  1.18it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_6/result/injection_6_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(861.3611546089853, 50)
+  7%|▋         | 7/100 [00:05<01:17,  1.20it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_7/result/injection_7_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(2207.7061539751153, 50)
+  8%|▊         | 8/100 [00:06<01:13,  1.26it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_8/result/injection_8_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(493.53197837679033, 50)
+  9%|▉         | 9/100 [00:07<01:09,  1.32it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_9/result/injection_9_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1598.4299880526453, 50)
+ 10%|█         | 10/100 [00:07<01:05,  1.37it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_10/result/injection_10_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(374.6641809516111, 50)
+ 11%|█         | 11/100 [00:08<01:10,  1.27it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_11/result/injection_11_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(789.9463216683316, 50)
+ 12%|█▏        | 12/100 [00:09<01:05,  1.35it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_12/result/injection_12_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(388.1459989631877, 50)
+ 13%|█▎        | 13/100 [00:10<01:00,  1.43it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_13/result/injection_13_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1392.6086616906548, 50)
+ 14%|█▍        | 14/100 [00:10<00:59,  1.44it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_14/result/injection_14_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(171.8906766595341, 50)
+ 15%|█▌        | 15/100 [00:11<00:57,  1.48it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_15/result/injection_15_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(159.45063903333747, 50)
+ 16%|█▌        | 16/100 [00:12<01:00,  1.38it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_16/result/injection_16_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1541.5339327868414, 50)
+ 17%|█▋        | 17/100 [00:13<01:05,  1.27it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_17/result/injection_17_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(190.25300924255302, 50)
+ 18%|█▊        | 18/100 [00:14<01:06,  1.24it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_18/result/injection_18_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(747.2390467460295, 50)
+ 19%|█▉        | 19/100 [00:14<01:02,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_19/result/injection_19_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(nan, 50)
+ 20%|██        | 20/100 [00:15<00:59,  1.35it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_20/result/injection_20_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(387.3437398447982, 50)
+ 21%|██        | 21/100 [00:16<00:56,  1.39it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_21/result/injection_21_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(104.78403027261028, 50)
+ 22%|██▏       | 22/100 [00:16<00:58,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_22/result/injection_22_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(687.2598351944621, 50)
+ 23%|██▎       | 23/100 [00:17<00:57,  1.33it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_23/result/injection_23_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(185.79699192770588, 50)
+ 24%|██▍       | 24/100 [00:18<00:57,  1.32it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_24/result/injection_24_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(154.43939014640824, 50)
+ 25%|██▌       | 25/100 [00:18<00:50,  1.50it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_25/result/injection_25_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(739.9804769181794, 50)
+ 26%|██▌       | 26/100 [00:19<00:54,  1.35it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_26/result/injection_26_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1043.9835798196336, 50)
+ 27%|██▋       | 27/100 [00:20<00:53,  1.36it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_27/result/injection_27_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(255.7368502844551, 50)
+ 28%|██▊       | 28/100 [00:21<00:52,  1.36it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_28/result/injection_28_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(129.44667105813042, 50)
+ 29%|██▉       | 29/100 [00:22<00:53,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_29/result/injection_29_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1407.3668237982993, 50)
+ 30%|███       | 30/100 [00:22<00:52,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_30/result/injection_30_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(507.85474371311517, 50)
+ 31%|███       | 31/100 [00:23<00:52,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_31/result/injection_31_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(290.7600937739848, 50)
+ 32%|███▏      | 32/100 [00:24<00:49,  1.39it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_32/result/injection_32_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(343.6682516108273, 50)
+ 33%|███▎      | 33/100 [00:25<00:50,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_33/result/injection_33_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(40.33148695110929, 50)
+ 34%|███▍      | 34/100 [00:25<00:48,  1.35it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_34/result/injection_34_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(171.3024588926741, 50)
+ 35%|███▌      | 35/100 [00:26<00:48,  1.33it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_35/result/injection_35_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(647.3585527414242, 50)
+ 36%|███▌      | 36/100 [00:27<00:47,  1.36it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_36/result/injection_36_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(973.9542006973636, 50)
+ 37%|███▋      | 37/100 [00:27<00:45,  1.37it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_37/result/injection_37_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(362.45656365979346, 50)
+ 38%|███▊      | 38/100 [00:28<00:42,  1.47it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_38/result/injection_38_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(708.9594103558643, 50)
+ 39%|███▉      | 39/100 [00:29<00:43,  1.41it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_39/result/injection_39_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(170.02894121262537, 50)
+ 40%|████      | 40/100 [00:30<00:43,  1.38it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_40/result/injection_40_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(384.34736483328277, 50)
+ 41%|████      | 41/100 [00:30<00:43,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_41/result/injection_41_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(192.3658036532396, 50)
+ 42%|████▏     | 42/100 [00:31<00:40,  1.43it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_42/result/injection_42_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1331.1024888419154, 50)
+ 43%|████▎     | 43/100 [00:32<00:39,  1.46it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_43/result/injection_43_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(673.6135278067146, 50)
+ 44%|████▍     | 44/100 [00:32<00:39,  1.43it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_44/result/injection_44_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1236.096278020278, 50)
+ 45%|████▌     | 45/100 [00:33<00:39,  1.38it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_45/result/injection_45_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(488.04300803961297, 50)
+ 46%|████▌     | 46/100 [00:34<00:41,  1.29it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_46/result/injection_46_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1460.571883377137, 50)
+ 47%|████▋     | 47/100 [00:35<00:41,  1.29it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_47/result/injection_47_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(256.34164175748873, 50)
+ 48%|████▊     | 48/100 [00:35<00:38,  1.36it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_48/result/injection_48_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(338.0342162297648, 50)
+ 49%|████▉     | 49/100 [00:36<00:36,  1.41it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_49/result/injection_49_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(174.30031318422454, 50)
+ 50%|█████     | 50/100 [00:37<00:38,  1.30it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_50/result/injection_50_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(491.06032970013536, 50)
+ 51%|█████     | 51/100 [00:38<00:39,  1.25it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_51/result/injection_51_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(391.4986875497873, 50)
+ 52%|█████▏    | 52/100 [00:39<00:40,  1.19it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_52/result/injection_52_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(1483.8359369626473, 50)
+ 53%|█████▎    | 53/100 [00:40<00:41,  1.13it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_53/result/injection_53_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(351.02193285951967, 50)
+ 54%|█████▍    | 54/100 [00:40<00:38,  1.20it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_54/result/injection_54_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(259.6845105354353, 50)
+ 55%|█████▌    | 55/100 [00:41<00:38,  1.17it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_55/result/injection_55_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(408.2572456048383, 50)
+ 56%|█████▌    | 56/100 [00:42<00:35,  1.23it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_56/result/injection_56_0_posterior_samples_with_kicks.dat
+INFO:root:Adding kick weights based on N(nan, 50)
+ 57%|█████▋    | 57/100 [00:43<00:31,  1.37it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_57/result/injection_57_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(201.06005926655362, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_57/result/injection_57_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_57/result/injection_57_0_posterior_samples_with_kicks_kick_mu201_sigma50_corner.png
- 58%|█████▊    | 58/100 [04:41<14:16, 20.39s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_58/result/injection_58_0_posterior_samples_with_kicks.dat
+ 58%|█████▊    | 58/100 [00:44<00:32,  1.28it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_58/result/injection_58_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(305.5888941447331, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_58/result/injection_58_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_58/result/injection_58_0_posterior_samples_with_kicks_kick_mu305_sigma50_corner.png
- 59%|█████▉    | 59/100 [05:06<14:46, 21.62s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_59/result/injection_59_0_posterior_samples_with_kicks.dat
+ 59%|█████▉    | 59/100 [00:44<00:32,  1.24it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_59/result/injection_59_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(195.1413730095044, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_59/result/injection_59_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_59/result/injection_59_0_posterior_samples_with_kicks_kick_mu195_sigma50_corner.png
- 60%|██████    | 60/100 [05:31<15:09, 22.75s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_60/result/injection_60_0_posterior_samples_with_kicks.dat
+ 60%|██████    | 60/100 [00:45<00:30,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_60/result/injection_60_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(470.3076861224502, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_60/result/injection_60_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_60/result/injection_60_0_posterior_samples_with_kicks_kick_mu470_sigma50_corner.png
- 61%|██████    | 61/100 [05:55<15:00, 23.09s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_61/result/injection_61_0_posterior_samples_with_kicks.dat
+ 61%|██████    | 61/100 [00:46<00:28,  1.38it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_61/result/injection_61_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(891.9992977681693, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_61/result/injection_61_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_61/result/injection_61_0_posterior_samples_with_kicks_kick_mu891_sigma50_corner.png
- 62%|██████▏   | 62/100 [06:19<14:53, 23.50s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_62/result/injection_62_0_posterior_samples_with_kicks.dat
+ 62%|██████▏   | 62/100 [00:47<00:29,  1.30it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_62/result/injection_62_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(224.83427950542773, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_62/result/injection_62_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_62/result/injection_62_0_posterior_samples_with_kicks_kick_mu224_sigma50_corner.png
- 63%|██████▎   | 63/100 [06:43<14:35, 23.65s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_63/result/injection_63_0_posterior_samples_with_kicks.dat
+ 63%|██████▎   | 63/100 [00:47<00:30,  1.22it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_63/result/injection_63_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(286.81969013045466, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_63/result/injection_63_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_63/result/injection_63_0_posterior_samples_with_kicks_kick_mu286_sigma50_corner.png
- 64%|██████▍   | 64/100 [07:07<14:08, 23.57s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_64/result/injection_64_0_posterior_samples_with_kicks.dat
+ 64%|██████▍   | 64/100 [00:48<00:27,  1.32it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_64/result/injection_64_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(600.6589934329028, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_64/result/injection_64_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_64/result/injection_64_0_posterior_samples_with_kicks_kick_mu600_sigma50_corner.png
- 65%|██████▌   | 65/100 [07:31<13:52, 23.77s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_65/result/injection_65_0_posterior_samples_with_kicks.dat
+ 65%|██████▌   | 65/100 [00:49<00:26,  1.34it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_65/result/injection_65_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(600.1101268395207, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_65/result/injection_65_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_65/result/injection_65_0_posterior_samples_with_kicks_kick_mu600_sigma50_corner.png
- 66%|██████▌   | 66/100 [07:56<13:36, 24.01s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_66/result/injection_66_0_posterior_samples_with_kicks.dat
+ 66%|██████▌   | 66/100 [00:50<00:29,  1.17it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_66/result/injection_66_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(169.7247687834936, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_66/result/injection_66_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_66/result/injection_66_0_posterior_samples_with_kicks_kick_mu169_sigma50_corner.png
- 67%|██████▋   | 67/100 [08:21<13:27, 24.46s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_67/result/injection_67_0_posterior_samples_with_kicks.dat
+ 67%|██████▋   | 67/100 [00:51<00:26,  1.26it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_67/result/injection_67_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1453.668542199597, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_67/result/injection_67_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_67/result/injection_67_0_posterior_samples_with_kicks_kick_mu1453_sigma50_corner.png
- 68%|██████▊   | 68/100 [08:46<13:10, 24.70s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_68/result/injection_68_0_posterior_samples_with_kicks.dat
+ 68%|██████▊   | 68/100 [00:51<00:25,  1.27it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_68/result/injection_68_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1178.9880763548715, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_68/result/injection_68_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_68/result/injection_68_0_posterior_samples_with_kicks_kick_mu1178_sigma50_corner.png
- 69%|██████▉   | 69/100 [09:11<12:48, 24.79s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_69/result/injection_69_0_posterior_samples_with_kicks.dat
+ 69%|██████▉   | 69/100 [00:52<00:24,  1.29it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_69/result/injection_69_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(281.28590706299, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_69/result/injection_69_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_69/result/injection_69_0_posterior_samples_with_kicks_kick_mu281_sigma50_corner.png
- 70%|███████   | 70/100 [09:35<12:16, 24.54s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_70/result/injection_70_0_posterior_samples_with_kicks.dat
+ 70%|███████   | 70/100 [00:53<00:22,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_70/result/injection_70_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(325.5975054982933, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_70/result/injection_70_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_70/result/injection_70_0_posterior_samples_with_kicks_kick_mu325_sigma50_corner.png
- 71%|███████   | 71/100 [10:00<11:54, 24.63s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_71/result/injection_71_0_posterior_samples_with_kicks.dat
+ 71%|███████   | 71/100 [00:54<00:22,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_71/result/injection_71_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(106.5252391726508, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_71/result/injection_71_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_71/result/injection_71_0_posterior_samples_with_kicks_kick_mu106_sigma50_corner.png
- 72%|███████▏  | 72/100 [10:25<11:31, 24.70s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_72/result/injection_72_0_posterior_samples_with_kicks.dat
+ 72%|███████▏  | 72/100 [00:55<00:23,  1.19it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_72/result/injection_72_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1480.2078250231211, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_72/result/injection_72_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_72/result/injection_72_0_posterior_samples_with_kicks_kick_mu1480_sigma50_corner.png
- 73%|███████▎  | 73/100 [10:49<11:03, 24.57s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_73/result/injection_73_0_posterior_samples_with_kicks.dat
+ 73%|███████▎  | 73/100 [00:56<00:28,  1.07s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_73/result/injection_73_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(115.02479001296288, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_73/result/injection_73_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_73/result/injection_73_0_posterior_samples_with_kicks_kick_mu115_sigma50_corner.png
- 74%|███████▍  | 74/100 [11:15<10:44, 24.78s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_74/result/injection_74_0_posterior_samples_with_kicks.dat
+ 74%|███████▍  | 74/100 [00:57<00:27,  1.06s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_74/result/injection_74_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(172.05569654184484, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_74/result/injection_74_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_74/result/injection_74_0_posterior_samples_with_kicks_kick_mu172_sigma50_corner.png
- 75%|███████▌  | 75/100 [11:39<10:20, 24.81s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_75/result/injection_75_0_posterior_samples_with_kicks.dat
+ 75%|███████▌  | 75/100 [00:58<00:24,  1.04it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_75/result/injection_75_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(208.90880313727763, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_75/result/injection_75_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_75/result/injection_75_0_posterior_samples_with_kicks_kick_mu208_sigma50_corner.png
- 76%|███████▌  | 76/100 [12:04<09:49, 24.58s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_76/result/injection_76_0_posterior_samples_with_kicks.dat
+ 76%|███████▌  | 76/100 [00:59<00:22,  1.05it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_76/result/injection_76_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(112.10736658458343, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_76/result/injection_76_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_76/result/injection_76_0_posterior_samples_with_kicks_kick_mu112_sigma50_corner.png
- 77%|███████▋  | 77/100 [12:28<09:24, 24.54s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_77/result/injection_77_0_posterior_samples_with_kicks.dat
+ 77%|███████▋  | 77/100 [01:00<00:20,  1.14it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_77/result/injection_77_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(217.855214621628, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_77/result/injection_77_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_77/result/injection_77_0_posterior_samples_with_kicks_kick_mu217_sigma50_corner.png
- 78%|███████▊  | 78/100 [12:53<09:02, 24.65s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_78/result/injection_78_0_posterior_samples_with_kicks.dat
+ 78%|███████▊  | 78/100 [01:01<00:19,  1.13it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_78/result/injection_78_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(895.7674347115695, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_78/result/injection_78_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_78/result/injection_78_0_posterior_samples_with_kicks_kick_mu895_sigma50_corner.png
- 79%|███████▉  | 79/100 [13:17<08:37, 24.63s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_79/result/injection_79_0_posterior_samples_with_kicks.dat
+ 79%|███████▉  | 79/100 [01:01<00:19,  1.10it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_79/result/injection_79_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(170.99459789137222, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_79/result/injection_79_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_79/result/injection_79_0_posterior_samples_with_kicks_kick_mu170_sigma50_corner.png
- 80%|████████  | 80/100 [13:43<08:15, 24.79s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_80/result/injection_80_0_posterior_samples_with_kicks.dat
+ 80%|████████  | 80/100 [01:03<00:19,  1.03it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_80/result/injection_80_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(333.7871568035185, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_80/result/injection_80_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_80/result/injection_80_0_posterior_samples_with_kicks_kick_mu333_sigma50_corner.png
- 81%|████████  | 81/100 [14:08<07:53, 24.94s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_81/result/injection_81_0_posterior_samples_with_kicks.dat
+ 81%|████████  | 81/100 [01:04<00:19,  1.04s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_81/result/injection_81_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(440.9111914324402, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_81/result/injection_81_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_81/result/injection_81_0_posterior_samples_with_kicks_kick_mu440_sigma50_corner.png
- 82%|████████▏ | 82/100 [14:33<07:32, 25.14s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_82/result/injection_82_0_posterior_samples_with_kicks.dat
+ 82%|████████▏ | 82/100 [01:05<00:18,  1.01s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_82/result/injection_82_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(213.72534126696803, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_82/result/injection_82_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_82/result/injection_82_0_posterior_samples_with_kicks_kick_mu213_sigma50_corner.png
- 83%|████████▎ | 83/100 [14:58<07:06, 25.06s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_83/result/injection_83_0_posterior_samples_with_kicks.dat
+ 83%|████████▎ | 83/100 [01:05<00:15,  1.10it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_83/result/injection_83_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(818.461481826096, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_83/result/injection_83_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_83/result/injection_83_0_posterior_samples_with_kicks_kick_mu818_sigma50_corner.png
- 84%|████████▍ | 84/100 [15:22<06:36, 24.76s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_84/result/injection_84_0_posterior_samples_with_kicks.dat
+ 84%|████████▍ | 84/100 [01:06<00:14,  1.10it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_84/result/injection_84_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(603.3594391016456, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_84/result/injection_84_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_84/result/injection_84_0_posterior_samples_with_kicks_kick_mu603_sigma50_corner.png
- 85%|████████▌ | 85/100 [15:48<06:13, 24.88s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_85/result/injection_85_0_posterior_samples_with_kicks.dat
+ 85%|████████▌ | 85/100 [01:07<00:13,  1.13it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_85/result/injection_85_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(128.60880415739834, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_85/result/injection_85_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_85/result/injection_85_0_posterior_samples_with_kicks_kick_mu128_sigma50_corner.png
- 86%|████████▌ | 86/100 [16:12<05:45, 24.69s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_86/result/injection_86_0_posterior_samples_with_kicks.dat
+ 86%|████████▌ | 86/100 [01:08<00:11,  1.23it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_86/result/injection_86_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(341.53441854669535, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_86/result/injection_86_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_86/result/injection_86_0_posterior_samples_with_kicks_kick_mu341_sigma50_corner.png
- 87%|████████▋ | 87/100 [16:37<05:22, 24.83s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_87/result/injection_87_0_posterior_samples_with_kicks.dat
+ 87%|████████▋ | 87/100 [01:08<00:09,  1.32it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_87/result/injection_87_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(304.7030602634851, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_87/result/injection_87_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_87/result/injection_87_0_posterior_samples_with_kicks_kick_mu304_sigma50_corner.png
- 88%|████████▊ | 88/100 [17:02<04:59, 24.93s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_88/result/injection_88_0_posterior_samples_with_kicks.dat
+ 88%|████████▊ | 88/100 [01:09<00:09,  1.22it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_88/result/injection_88_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(657.1752569870736, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_88/result/injection_88_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_88/result/injection_88_0_posterior_samples_with_kicks_kick_mu657_sigma50_corner.png
- 89%|████████▉ | 89/100 [17:27<04:34, 24.98s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_89/result/injection_89_0_posterior_samples_with_kicks.dat
+ 89%|████████▉ | 89/100 [01:10<00:09,  1.18it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_89/result/injection_89_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1305.7669544558125, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_89/result/injection_89_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_89/result/injection_89_0_posterior_samples_with_kicks_kick_mu1305_sigma50_corner.png
- 90%|█████████ | 90/100 [17:51<04:06, 24.64s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_90/result/injection_90_0_posterior_samples_with_kicks.dat
+ 90%|█████████ | 90/100 [01:11<00:08,  1.23it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_90/result/injection_90_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(230.5462358944839, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_90/result/injection_90_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_90/result/injection_90_0_posterior_samples_with_kicks_kick_mu230_sigma50_corner.png
- 91%|█████████ | 91/100 [18:15<03:40, 24.50s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_91/result/injection_91_0_posterior_samples_with_kicks.dat
+ 91%|█████████ | 91/100 [01:12<00:06,  1.33it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_91/result/injection_91_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(259.76738337694627, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_91/result/injection_91_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_91/result/injection_91_0_posterior_samples_with_kicks_kick_mu259_sigma50_corner.png
- 92%|█████████▏| 92/100 [18:39<03:14, 24.35s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_92/result/injection_92_0_posterior_samples_with_kicks.dat
+ 92%|█████████▏| 92/100 [01:13<00:06,  1.27it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_92/result/injection_92_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(135.0707107002039, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_92/result/injection_92_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_92/result/injection_92_0_posterior_samples_with_kicks_kick_mu135_sigma50_corner.png
- 93%|█████████▎| 93/100 [19:03<02:49, 24.25s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_93/result/injection_93_0_posterior_samples_with_kicks.dat
+ 93%|█████████▎| 93/100 [01:13<00:05,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_93/result/injection_93_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1052.9360596959557, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_93/result/injection_93_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_93/result/injection_93_0_posterior_samples_with_kicks_kick_mu1052_sigma50_corner.png
- 94%|█████████▍| 94/100 [19:27<02:23, 23.98s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_94/result/injection_94_0_posterior_samples_with_kicks.dat
+ 94%|█████████▍| 94/100 [01:14<00:04,  1.31it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_94/result/injection_94_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(1089.0736586035382, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_94/result/injection_94_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_94/result/injection_94_0_posterior_samples_with_kicks_kick_mu1089_sigma50_corner.png
- 95%|█████████▌| 95/100 [19:51<02:01, 24.21s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_95/result/injection_95_0_posterior_samples_with_kicks.dat
+ 95%|█████████▌| 95/100 [01:15<00:03,  1.26it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_95/result/injection_95_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(486.36029360883276, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_95/result/injection_95_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_95/result/injection_95_0_posterior_samples_with_kicks_kick_mu486_sigma50_corner.png
- 96%|█████████▌| 96/100 [20:15<01:36, 24.10s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_96/result/injection_96_0_posterior_samples_with_kicks.dat
+ 96%|█████████▌| 96/100 [01:16<00:03,  1.22it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_96/result/injection_96_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(696.1104347292053, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_96/result/injection_96_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_96/result/injection_96_0_posterior_samples_with_kicks_kick_mu696_sigma50_corner.png
- 97%|█████████▋| 97/100 [20:39<01:11, 23.96s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_97/result/injection_97_0_posterior_samples_with_kicks.dat
+ 97%|█████████▋| 97/100 [01:17<00:02,  1.14it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_97/result/injection_97_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(250.85472055070312, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_97/result/injection_97_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_97/result/injection_97_0_posterior_samples_with_kicks_kick_mu250_sigma50_corner.png
- 98%|█████████▊| 98/100 [21:02<00:47, 23.83s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_98/result/injection_98_0_posterior_samples_with_kicks.dat
+ 98%|█████████▊| 98/100 [01:17<00:01,  1.26it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_98/result/injection_98_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(505.56291079705835, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_98/result/injection_98_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_98/result/injection_98_0_posterior_samples_with_kicks_kick_mu505_sigma50_corner.png
- 99%|█████████▉| 99/100 [21:27<00:23, 23.96s/it]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_99/result/injection_99_0_posterior_samples_with_kicks.dat
+ 99%|█████████▉| 99/100 [01:18<00:00,  1.27it/s]INFO:root:Loading /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_99/result/injection_99_0_posterior_samples_with_kicks.dat
 INFO:root:Adding kick weights based on N(122.20555753882637, 50)
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_99/result/injection_99_0_posterior_samples_with_kicks_no_reweighting_corner.png
-INFO:root:Plotting /fred/oz117/avajpeyi/projects/phase-marginalisation-test/jobs/out_hundred_injections_gstar/out_injection_99/result/injection_99_0_posterior_samples_with_kicks_kick_mu122_sigma50_corner.png
-100%|██████████| 100/100 [21:51<00:00, 24.03s/it]100%|██████████| 100/100 [21:51<00:00, 13.11s/it]
+100%|██████████| 100/100 [01:19<00:00,  1.37it/s]100%|██████████| 100/100 [01:19<00:00,  1.26it/s]
+       remnant_kick_mag   kick_weight
+count      24268.000000  2.426800e+04
+mean         551.083135  6.378743e-04
+std          377.721063  1.801247e-03
+min            6.021109  0.000000e+00
+25%          269.857709  1.058413e-25
+50%          449.198079  1.000201e-14
+75%          749.460518  3.986556e-06
+max         2687.774545  7.978843e-03
+       remnant_kick_mag   kick_weight
+count      31203.000000  3.120300e+04
+mean         478.287348  1.869980e-03
+std          395.036201  2.840283e-03
+min            9.977984  0.000000e+00
+25%          173.655788  4.481922e-29
+50%          350.680643  3.068163e-07
+75%          674.970125  3.671003e-03
+max         2906.465724  7.978846e-03
+       remnant_kick_mag    kick_weight
+count      26649.000000   2.664900e+04
+mean         525.855523   1.464739e-04
+std          411.443209   8.866149e-04
+min            6.504426  4.212715e-169
+25%          208.185668  3.578600e-124
+50%          401.342044   9.114191e-88
+75%          735.701894   7.406476e-41
+max         2641.847500   7.978782e-03
+       remnant_kick_mag  kick_weight
+count      23194.000000          0.0
+mean         438.802631          NaN
+std          264.950666          NaN
+min           35.687471          NaN
+25%          251.824946          NaN
+50%          355.525525          NaN
+75%          555.545437          NaN
+max         2228.569587          NaN
+Error: Invalid weights: weights sum to zero
+       remnant_kick_mag   kick_weight
+count      20698.000000  2.069800e+04
+mean         540.210301  8.818782e-04
+std          428.905602  2.031861e-03
+min           21.111893  0.000000e+00
+25%          221.943756  1.096637e-13
+50%          399.055041  2.127637e-08
+75%          735.477826  1.542077e-04
+max         3155.941733  7.978842e-03
+       remnant_kick_mag    kick_weight
+count      27205.000000   2.720500e+04
+mean         453.751813   8.266991e-04
+std          329.269662   1.978735e-03
+min            7.683817  3.815996e-260
+25%          204.954594   6.210610e-16
+50%          358.850395   1.240569e-09
+75%          615.598224   1.120423e-04
+max         2274.223346   7.978842e-03
+       remnant_kick_mag    kick_weight
+count      29153.000000   2.915300e+04
+mean         516.947612   4.810304e-04
+std          346.898619   1.560498e-03
+min           20.987420  8.618985e-234
+25%          250.008206   1.695865e-36
+50%          430.681121   4.069430e-21
+75%          707.004058   3.782156e-08
+max         2492.035835   7.978838e-03
+       remnant_kick_mag    kick_weight
+count      27172.000000   2.717200e+04
+mean         564.418023   1.484653e-05
+std          427.317875   2.880643e-04
+min            9.563188   0.000000e+00
+25%          234.233207   0.000000e+00
+50%          434.714233  7.261091e-276
+75%          789.639579  1.722951e-177
+max         2983.042175   7.978598e-03
+       remnant_kick_mag   kick_weight
+count      24408.000000  2.440800e+04
+mean         546.478440  8.905314e-04
+std          428.102423  2.070654e-03
+min            6.899768  0.000000e+00
+25%          228.014887  1.863465e-15
+50%          414.208972  6.716353e-09
+75%          750.952886  1.367247e-04
+max         2938.117823  7.978844e-03
+       remnant_kick_mag    kick_weight
+count      25860.000000   2.586000e+04
+mean         405.185553   1.564067e-05
+std          284.445041   2.916087e-04
+min           18.294280  1.071868e-219
+25%          198.513456  4.773121e-173
+50%          315.218706  7.540008e-146
+75%          526.455736  1.229935e-102
+max         2248.175961   7.976514e-03
+       remnant_kick_mag   kick_weight
+count      33280.000000  3.328000e+04
+mean         428.341347  1.251039e-03
+std          308.460620  2.333689e-03
+min           19.446270  0.000000e+00
+25%          194.441452  6.889964e-09
+50%          331.985545  7.306616e-06
+75%          583.009042  1.105017e-03
+max         2326.912964  7.978846e-03
+       remnant_kick_mag   kick_weight
+count      23747.000000  2.374700e+04
+mean         639.934581  5.672485e-04
+std          463.486235  1.687048e-03
+min           18.805409  0.000000e+00
+25%          272.341550  8.591010e-32
+50%          514.476209  9.658644e-18
+75%          899.034290  6.785917e-07
+max         2887.628014  7.978820e-03
+       remnant_kick_mag   kick_weight
+count      20646.000000  2.064600e+04
+mean         466.853738  1.079063e-03
+std          381.225231  2.198467e-03
+min            6.999838  0.000000e+00
+25%          195.726826  4.623884e-10
+50%          334.280167  2.887399e-06
+75%          614.766623  5.925332e-04
+max         2939.461163  7.978828e-03
+       remnant_kick_mag    kick_weight
+count      27468.000000   2.746800e+04
+mean         570.534529   2.215474e-04
+std          441.369314   1.110296e-03
+min            4.094297  2.756816e-170
+25%          213.213420  1.151291e-123
+50%          458.720928   1.087835e-78
+75%          829.750008   2.854525e-31
+max         2741.625014   7.978785e-03
+       remnant_kick_mag   kick_weight
+count      22626.000000  2.262600e+04
+mean         497.627844  1.603119e-03
+std          370.664384  2.617338e-03
+min           13.483322  0.000000e+00
+25%          217.464006  2.804641e-25
+50%          392.320170  4.803293e-07
+75%          680.331399  2.425673e-03
+max         2669.252429  7.978828e-03
+       remnant_kick_mag   kick_weight
+count      31917.000000  3.191700e+04
+mean         746.325050  9.545157e-04
+std          498.138520  2.162081e-03
+min           26.726984  0.000000e+00
+25%          327.099723  8.374429e-76
+50%          664.993871  5.047403e-25
+75%         1076.075760  2.888452e-05
+max         3047.740791  7.978842e-03
+       remnant_kick_mag   kick_weight
+count      37436.000000  3.743600e+04
+mean        1120.517152  3.934234e-04
+std          692.240797  1.436530e-03
+min            8.726242  0.000000e+00
+25%          556.509212  1.379175e-95
+50%         1059.945850  4.103276e-39
+75%         1615.008113  2.489447e-11
+max         3547.789726  7.978839e-03
+       remnant_kick_mag    kick_weight
+count      34187.000000   3.418700e+04
+mean         965.861618   7.245922e-04
+std          671.028415   1.891228e-03
+min            8.047356   0.000000e+00
+25%          405.164934  7.005698e-136
+50%          839.179129   2.114536e-39
+75%         1427.940141   7.765626e-07
+max         3335.588791   7.978845e-03
+       remnant_kick_mag   kick_weight
+count      25099.000000  2.509900e+04
+mean         552.166778  6.360544e-04
+std          391.557022  1.775061e-03
+min            4.369476  0.000000e+00
+25%          250.780902  8.958648e-28
+50%          443.718922  1.031677e-15
+75%          776.555553  2.189481e-06
+max         2679.676126  7.978839e-03
+       remnant_kick_mag  kick_weight
+count      23045.000000          0.0
+mean         467.607968          NaN
+std          341.147974          NaN
+min           13.402141          NaN
+25%          228.868158          NaN
+50%          355.854306          NaN
+75%          597.811513          NaN
+max         2743.997680          NaN
+Error: Invalid weights: weights sum to zero
+       remnant_kick_mag   kick_weight
+count      24958.000000  2.495800e+04
+mean         616.283814  1.022007e-03
+std          444.733094  2.161162e-03
+min           10.646145  0.000000e+00
+25%          266.128660  3.017300e-22
+50%          507.500519  1.827486e-07
+75%          860.217342  4.318310e-04
+max         3222.832761  7.978846e-03
+       remnant_kick_mag   kick_weight
+count      28644.000000  2.864400e+04
+mean         395.687540  1.437239e-03
+std          297.015792  2.429001e-03
+min           11.581660  0.000000e+00
+25%          189.556163  5.618171e-17
+50%          297.482658  4.749418e-06
+75%          508.436293  1.889351e-03
+max         2588.228863  7.978818e-03
+       remnant_kick_mag   kick_weight
+count      27085.000000  2.708500e+04
+mean         550.515161  5.969146e-04
+std          441.546974  1.729492e-03
+min            1.899177  0.000000e+00
+25%          207.436741  1.497927e-27
+50%          418.739042  5.849008e-16
+75%          770.580501  1.243550e-06
+max         2812.823291  7.978841e-03
+       remnant_kick_mag   kick_weight
+count      23770.000000  2.377000e+04
+mean         480.757942  1.838903e-03
+std          356.994141  2.766341e-03
+min           17.134683  0.000000e+00
+25%          225.014006  6.166831e-20
+50%          372.533884  7.466420e-06
+75%          629.652572  3.453263e-03
+max         2890.251161  7.978844e-03
+       remnant_kick_mag   kick_weight
+count      16224.000000  1.622400e+04
+mean         487.906129  1.866646e-03
+std          382.003299  2.814805e-03
+min           12.282256  0.000000e+00
+25%          207.612704  3.274528e-25
+50%          350.094500  3.774865e-06
+75%          662.117892  3.547701e-03
+max         2828.863089  7.978845e-03
+       remnant_kick_mag    kick_weight
+count      33684.000000   3.368400e+04
+mean         556.341713   6.357584e-04
+std          400.264367   1.798240e-03
+min            7.074520  1.037763e-208
+25%          230.418213   1.022040e-29
+50%          460.105586   5.556744e-16
+75%          797.747223   2.942137e-06
+max         2279.574045   7.978830e-03
+       remnant_kick_mag   kick_weight
+count      26829.000000  2.682900e+04
+mean         525.605583  2.996119e-04
+std          324.058061  1.262832e-03
+min           12.254007  2.777191e-95
+25%          283.469374  3.370684e-53
+50%          447.131039  4.187764e-34
+75%          709.825799  6.398345e-14
+max         2041.744239  7.978730e-03
+       remnant_kick_mag   kick_weight
+count      27580.000000  2.758000e+04
+mean         436.551858  2.176973e-03
+std          367.677340  2.682311e-03
+min           28.013284  0.000000e+00
+25%          186.872039  1.858293e-10
+50%          292.936192  8.181367e-04
+75%          552.175977  3.919656e-03
+max         2851.813686  7.978845e-03
+       remnant_kick_mag   kick_weight
+count      26685.000000  26685.000000
+mean         221.209424      0.004050
+std          140.358410      0.002944
+min           18.460748      0.000000
+25%          152.245876      0.000737
+50%          181.288141      0.004579
+75%          238.566903      0.006845
+max         2094.069946      0.007979
+       remnant_kick_mag    kick_weight
+count      27064.000000   2.706400e+04
+mean         487.630000   9.671552e-05
+std          360.040078   7.229702e-04
+min           15.743926  4.895083e-171
+25%          225.633201  3.424280e-124
+50%          369.172317   1.612647e-96
+75%          639.734810   2.412051e-54
+max         2772.981903   7.973935e-03
+       remnant_kick_mag   kick_weight
+count      29964.000000  2.996400e+04
+mean         748.006435  7.743561e-04
+std          477.836032  1.940918e-03
+min            8.920354  0.000000e+00
+25%          354.478057  7.976509e-30
+50%          670.715850  2.409665e-11
+75%         1065.394385  5.115739e-05
+max         2803.061379  7.978840e-03
+       remnant_kick_mag   kick_weight
+count      25614.000000  2.561400e+04
+mean         569.815058  1.437717e-03
+std          423.259392  2.469272e-03
+min           11.835975  0.000000e+00
+25%          245.766618  7.325433e-25
+50%          443.599649  4.429158e-06
+75%          794.457987  1.790731e-03
+max         3219.929200  7.978845e-03
+       remnant_kick_mag   kick_weight
+count      32388.000000  3.238800e+04
+mean         613.521678  1.099519e-03
+std          425.834248  2.243781e-03
+min            6.825122  0.000000e+00
+25%          270.662878  4.355323e-27
+50%          516.847102  1.130828e-07
+75%          872.191842  5.641984e-04
+max         2710.116615  7.978845e-03
+       remnant_kick_mag   kick_weight
+count      28068.000000  2.806800e+04
+mean         712.855187  4.391745e-04
+std          541.616434  1.442208e-03
+min           11.780064  0.000000e+00
+25%          280.868209  1.158439e-82
+50%          573.647962  1.573879e-27
+75%          999.065660  7.524323e-08
+max         3149.868823  7.978843e-03
+       remnant_kick_mag    kick_weight
+count      30507.000000   3.050700e+04
+mean         249.042776   4.741784e-03
+std          156.239977   3.151162e-03
+min           31.551436  1.659502e-193
+25%          163.341532   1.033539e-03
+50%          196.060411   6.145457e-03
+75%          271.483381   7.644221e-03
+max         1652.959376   7.978846e-03
+       remnant_kick_mag    kick_weight
+count      27269.000000   2.726900e+04
+mean         463.850431   6.062372e-04
+std          373.703673   1.748672e-03
+min            7.376322  1.909252e-315
+25%          183.064020   2.105869e-24
+50%          358.235919   4.265388e-14
+75%          639.761170   4.084161e-06
+max         2544.509880   7.978826e-03
+       remnant_kick_mag    kick_weight
+count      25851.000000   2.585100e+04
+mean         503.392384   3.030822e-04
+std          357.365392   1.263650e-03
+min            9.415550  2.825859e-311
+25%          233.501485   4.711530e-51
+50%          394.379990   2.171741e-33
+75%          671.451713   9.647335e-14
+max         2858.409281   7.978845e-03
+       remnant_kick_mag   kick_weight
+count      19039.000000  1.903900e+04
+mean         482.857876  1.379045e-03
+std          371.897254  2.401966e-03
+min           10.410297  0.000000e+00
+25%          221.709179  1.990187e-10
+50%          356.187456  2.133505e-05
+75%          642.261374  1.538891e-03
+max         2895.343832  7.978832e-03
+       remnant_kick_mag   kick_weight
+count      28837.000000  2.883700e+04
+mean         624.400719  6.618461e-04
+std          463.662736  1.812077e-03
+min            9.311061  0.000000e+00
+25%          257.121240  6.040732e-27
+50%          501.863238  3.508796e-15
+75%          872.252326  5.605404e-06
+max         3250.162273  7.978845e-03
+       remnant_kick_mag   kick_weight
+count      29795.000000  2.979500e+04
+mean         486.900218  7.154953e-04
+std          261.573226  1.757849e-03
+min           46.141096  0.000000e+00
+25%          307.456760  1.284107e-19
+50%          409.791720  8.105000e-08
+75%          609.733908  1.825950e-04
+max         2293.508309  7.978833e-03
+       remnant_kick_mag   kick_weight
+count      28941.000000  2.894100e+04
+mean         495.312507  1.147695e-03
+std          371.344096  2.266819e-03
+min           12.006587  0.000000e+00
+25%          207.533822  5.792852e-12
+50%          395.488555  1.077004e-06
+75%          689.695083  7.413112e-04
+max         2593.074986  7.978838e-03
+       remnant_kick_mag   kick_weight
+count      20493.000000  2.049300e+04
+mean         513.888275  1.966358e-03
+std          416.583929  2.830739e-03
+min            9.336907  0.000000e+00
+25%          209.758287  3.882695e-24
+50%          372.805052  1.171649e-05
+75%          687.716948  3.976381e-03
+max         3147.901581  7.978845e-03
+       remnant_kick_mag    kick_weight
+count      22539.000000   2.253900e+04
+mean         568.978866   1.730933e-04
+std          429.162782   9.582668e-04
+min            9.820298  5.874769e-220
+25%          247.987587  6.931258e-105
+50%          435.665108   4.463563e-73
+75%          783.642352   3.254946e-31
+max         2912.189286   7.978074e-03
+       remnant_kick_mag   kick_weight
+count      20851.000000  2.085100e+04
+mean         478.213390  5.780019e-04
+std          342.616381  1.705126e-03
+min           22.536747  0.000000e+00
+25%          244.303548  1.144095e-20
+50%          373.027210  3.798855e-13
+75%          600.276793  1.826303e-06
+max         3198.356992  7.978844e-03
+       remnant_kick_mag    kick_weight
+count      29680.000000   2.968000e+04
+mean         575.650158   1.859338e-04
+std          391.985552   9.906062e-04
+min            8.658686  1.548385e-259
+25%          286.671544   3.097434e-81
+50%          472.728468   4.365237e-54
+75%          765.051466   3.352617e-24
+max         2955.255033   7.978809e-03
        remnant_kick_mag    kick_weight
 count      35023.000000   3.502300e+04
 mean         604.510547   1.282751e-03
@@ -347,7 +732,7 @@ min           90.193004          NaN
 50%          149.284659          NaN
 75%          207.718913          NaN
 max          452.116115          NaN
-Error: cannot convert float NaN to integer
+Error: Invalid weights: weights sum to zero
        remnant_kick_mag   kick_weight
 count      30046.000000  3.004600e+04
 mean         562.882963  1.445599e-03
