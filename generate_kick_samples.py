@@ -23,10 +23,11 @@ logging.getLogger().setLevel(logging.INFO)
 ALIGNED_SAMPLES = "aligned_spin_samples.csv"
 PRECESSING_SAMPLES = "precession_spin_samples.csv"
 
-ALIGNED_POPULATION_PRIOR = os.path.join(os.path.dirname(__file__),
-                                        "aligned_spin_population.prior")
-PRECESSING_POPULATION_PRIOR = os.path.join(os.path.dirname(__file__),
-                                           "precessing_spin_population.prior")
+DIRNAME = os.path.dirname(__file__)
+
+ALIGNED_POPULATION_PRIOR = os.path.join(DIRNAME, "datafiles/aligned_population.prior")
+PRECESSING_POPULATION_PRIOR = os.path.join(DIRNAME, "datafiles/precessing_spin_population.prior")
+AGN_POPULATION_PRIOR = os.path.join(DIRNAME, "datafiles/agn_population.prior")
 
 REMNANT_KICK = 'remnant_kick'
 REMNANT_MASS = 'remnant_mass'
@@ -53,7 +54,7 @@ class Samples:
         return samples
 
     def add_remnant_data_to_samples(self):
-        for idx, s in tqdm.tqdm(self.samples.iterrows(), total=len(self.num_samples),
+        for idx, s in tqdm.tqdm(self.samples.iterrows(), total=self.num_samples,
                                 desc="Merging BH"):
             remnant = merge_bbh_pair(
                 bh_1=BlackHole(mass=s.mass_1, spin=[s.spin_1x, s.spin_1y, s.spin_1z]),
@@ -80,17 +81,21 @@ class Samples:
         plt.close()
 
     def save_samples(self):
-        self.samples.to_csv(self.prior_filename.replace(".prior", ".png"), index=False)
+        self.samples.to_csv(self.prior_filename.replace(".prior", ".csv"), index=False)
 
 
 def main():
-    aligned_samples = Samples(ALIGNED_POPULATION_PRIOR)
-    aligned_samples.add_remnant_data_to_samples()
-    aligned_samples.save_samples()
+    agn_samples = Samples(AGN_POPULATION_PRIOR)
+    agn_samples.add_remnant_data_to_samples()
+    agn_samples.save_samples()
 
-    precessing_samples = Samples(PRECESSING_POPULATION_PRIOR)
-    precessing_samples.add_remnant_data_to_samples()
-    precessing_samples.save_samples()
+    # aligned_samples = Samples(ALIGNED_POPULATION_PRIOR)
+    # aligned_samples.add_remnant_data_to_samples()
+    # aligned_samples.save_samples()
+    #
+    # precessing_samples = Samples(PRECESSING_POPULATION_PRIOR)
+    # precessing_samples.add_remnant_data_to_samples()
+    # precessing_samples.save_samples()
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=corner_plotter
+#SBATCH --job-name=quantiles_getter
 #SBATCH --time=0:05:00
-#SBATCH --output=corner_plotter.out
+#SBATCH --output=quantiles_getter.out
 #SBATCH --mem-per-cpu=1000
 
 source ~/.bash_profile
