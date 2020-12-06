@@ -11,6 +11,10 @@ output
 *.so
 *.dat
 *.DS_store
+*.png
+*.svg
+*.dat
+*.csv
 
 # Distribution / packaging
 .Python

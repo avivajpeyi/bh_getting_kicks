@@ -6,11 +6,9 @@ import pandas as pd
 BILBY_BLUE_COLOR = '#0072C1'
 VIOLET_COLOR = "#8E44AD"
 
-
 RADIUS = 1
-N_VEC = 1000
+N_VEC = 100
 MIN_COS_THETA = 0.7
-
 
 CORNER_KWARGS = dict(
     smooth=0.9,
@@ -73,8 +71,8 @@ def plot_spherical_vectors():
     p.add_mesh(pt_cloud, color='maroon', point_size=10, render_points_as_spheres=True)
     arrows = pt_cloud.glyph(orient='vectors', scale=False, factor=0.3, )
     p.add_mesh(arrows, color='lightblue')
-    # p.show()
-    p.save_graphic("bbh_spins.svg")
+    p.show()
+    # p.save_graphic("bbh_spins.svg")
 
 
 def get_zenith_angle(z):
@@ -92,23 +90,19 @@ def get_azimuth_angle(x, y):
 
 def convert_vectors_to_bbh_param():
     """Generate BBH spin vectors and convert to LIGO BBH params
-
     cos_tilt_i:
         Cosine of the zenith angle between the s and j [-1,1]
-
     Phi_12:
         diff bw azimuthal angles of the s1+s2 projections on orbital plane [0, 2pi]
-
     phi_jl:
         diff bw L and J azimuthal angles [0, 2pi]
-
     """
     # s1 is pointing along Z
     s1 = [[0, 0, 1] for _ in range(N_VEC)]
     # s2 is slightly off Z
     s2 = normalise_vectors([get_isotropic_vector(MIN_COS_THETA) for _ in range(N_VEC)])
 
-    # J is isotropically distributed
+    # J isotropically distributed
     j = normalise_vectors([get_isotropic_vector() for _ in range(N_VEC)])
 
     # L is s1 + s2
@@ -126,11 +120,32 @@ def get_difference_in_azimuths(v1, v2):
     v1_azimuth = [get_azimuth_angle(v[0], v[1]) for v in v1]
     v2_azimuth = [get_azimuth_angle(v[0], v[1]) for v in v2]
     angles = [j - i for i, j in zip(v1_azimuth, v2_azimuth)]
-    return  np.mod(angles, 2 * np.pi)
+    return np.mod(angles, 2 * np.pi)
+
+def plot_one_bh_param(s1, s2, l, j):
+    import pyvista as pv
+    my_vectors = [s1, s2, l, j]
+
+
+    # Show the result
+    p = pv.Plotter()
+    p.add_mesh(pv.Sphere(radius=RADIUS))
+    ar_kwgs = dict(scale=RADIUS * 2, shaft_radius=0.01, tip_radius=0.05, tip_length=0.1)
+    p.add_mesh(pv.Arrow(direction=[1, 0, 0], **ar_kwgs), color="blue")  # x
+    p.add_mesh(pv.Arrow(direction=[0, 1, 0], **ar_kwgs), color="red")  # y
+    p.add_mesh(pv.Arrow(direction=[0, 0, 1], **ar_kwgs), color="green")  # Z
+    for v in my_vectors:
+        pt_cloud = pv.PolyData(v)
+        vectors = compute_vectors(pt_cloud)
+        pt_cloud['vectors'] = vectors
+        p.add_mesh(pt_cloud, color='maroon', point_size=10, render_points_as_spheres=True)
+        arrows = pt_cloud.glyph(orient='vectors', scale=False, factor=0.3)
+        p.add_mesh(arrows, color='maroon')
+    p.show()
 
 
 def main():
-    # plot_spherical_vectors()
+    plot_spherical_vectors()
     bbh_vectors = convert_vectors_to_bbh_param()
     bbh_vectors = bbh_vectors.drop(columns=['cos_tilt_1'])
     print(bbh_vectors.describe())
@@ -140,3 +155,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    # plot_one_bh_param([0,0,1], [0.5, 0, 0.5], [0.33,0.33,0.33], [0,0,1])

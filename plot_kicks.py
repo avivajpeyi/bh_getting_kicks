@@ -15,7 +15,8 @@ rcParams['axes.titlesize'] = 30
 rcParams['axes.labelpad'] = 20
 
 SAMPLES = "datafiles/{}_population.csv"
-DATA = dict(agn=dict(bins=100, label="AGN"),
+DATA = dict(
+    # agn=dict(bins=100, label="AGN"),
             aligned_spin=dict(bins=12, label="Aligned Spin"),
             precessing_spin=dict(bins=100, label="Precessing Spin"),
             )
@@ -35,6 +36,7 @@ def plot():
     ax.legend(frameon=False)
     ax.set_ylabel("Density")
     ax.set_xlabel("Kick Magnitude (km/s)")
+    plt.tight_layout()
     fig.savefig("kick_magnitudes_for_different_populations.png")
 
 
