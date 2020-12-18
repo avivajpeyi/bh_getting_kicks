@@ -15,6 +15,9 @@ output
 *.svg
 *.dat
 *.csv
+*.gif
+*.zip
+*.hdf5
 
 # Distribution / packaging
 .Python
@@ -171,3 +174,4 @@ output/precessing_corner.png
 output/precession_spin_samples.csv
 output/q_and_kick.png
 output/smaller_corner.png
+/datafiles/samples/GW150914_GWTC-1.hdf5
