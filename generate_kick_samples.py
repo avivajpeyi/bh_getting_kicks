@@ -16,8 +16,8 @@ import tqdm
 from bilby.gw import conversion
 from bilby.gw.prior import BBHPriorDict
 
-from black_hole import BlackHole, merge_bbh_pair
-from corner_kwargs import CORNER_KWARGS
+from bbh_simulator.black_hole import BlackHole, merge_bbh_pair
+from bbh_simulator.corner_kwargs import CORNER_KWARGS
 
 logging.getLogger().setLevel(logging.INFO)
 ALIGNED_SAMPLES = "aligned_spin_samples.csv"

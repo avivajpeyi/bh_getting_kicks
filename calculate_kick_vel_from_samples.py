@@ -8,7 +8,7 @@ import pandas as pd
 import tqdm
 from bilby.gw import conversion
 
-from black_hole import BlackHole, merge_bbh_pair
+from bbh_simulator.black_hole import BlackHole, merge_bbh_pair
 
 logging.getLogger().setLevel(logging.INFO)
 

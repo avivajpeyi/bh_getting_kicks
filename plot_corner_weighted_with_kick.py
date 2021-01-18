@@ -27,7 +27,7 @@ from bilby.gw import conversion
 from matplotlib import rcParams
 from scipy.stats import norm
 
-from corner_kwargs import CORNER_KWARGS, VIOLET_COLOR, BILBY_BLUE_COLOR
+from bbh_simulator.corner_kwargs import CORNER_KWARGS, VIOLET_COLOR, BILBY_BLUE_COLOR
 
 rcParams["font.size"] = 20
 rcParams["font.family"] = "serif"

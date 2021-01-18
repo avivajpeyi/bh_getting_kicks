@@ -17,7 +17,7 @@ import scipy
 import scipy.interpolate
 from matplotlib import rcParams
 
-from corner_kwargs import CORNER_KWARGS
+from bbh_simulator.corner_kwargs import CORNER_KWARGS
 
 NUM_INTERPOLATED_POINTS = 10000
 

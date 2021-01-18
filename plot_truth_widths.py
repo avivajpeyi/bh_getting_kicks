@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib import rcParams
 
-from corner_kwargs import BILBY_BLUE_COLOR, VIOLET_COLOR
+from bbh_simulator.corner_kwargs import BILBY_BLUE_COLOR, VIOLET_COLOR
 
 rcParams["font.size"] = 20
 rcParams["font.family"] = "serif"
